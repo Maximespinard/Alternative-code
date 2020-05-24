@@ -1,10 +1,12 @@
 import React from 'react';
 import './style.css';
 
-function App() {
+import Menu from '../Menu'
+
+const App = () => {
   return (
     <div className="App">
-      Alternative Code
+     <Menu />
     </div>
   );
 }
