@@ -2,28 +2,33 @@ import React from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 import logo from "../../assets/images/alternative.png";
-import "./menu.css";
+import "./Menu.css";
 
 const Menu = () => {
   return (
-    <div className="menu">
-      <Navbar expand="lg">
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-            <div className="menu_img-wrapper d-flex ">
-              <img src={logo} alt="alternative code" />
-            </div>
-            <Nav className="mr-auto">
-              <div className="d-flex flex-row">
-                <Nav.Link href="#home"><p>Home</p></Nav.Link>
-                <Nav.Link href="#link"><p>About</p></Nav.Link>
-                <Nav.Link href="#link"><p>Démo</p></Nav.Link>
-                <Nav.Link href="#link"><p>Contact</p></Nav.Link>
-              </div>
-            </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </div>
+    <Navbar className="menu" expand="lg">
+      <Navbar.Brand href="#home">
+        <img className="menu_logo" src={logo} alt="alternative code" />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#link">Link</Nav.Link>
+          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">
+              Another action
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">
+              Separated link
+            </NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
