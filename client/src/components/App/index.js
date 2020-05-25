@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Typewriter from "typewriter-effect";
+import Typewriter from 'typewriter-effect'
 import Menu from "../Menu";
 import Home from "../Home";
 
