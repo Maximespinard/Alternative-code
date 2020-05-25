@@ -1,0 +1,19 @@
+/*
+    HEADER
+*/
+.header {
+  background-color: cadetblue;
+  height: 100vh;
+  flex-direction: row;
+}
+
+.header__left {
+  justify-content: center;
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+
+.header__right {
+  flex: 2;
+}
