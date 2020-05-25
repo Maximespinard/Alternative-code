@@ -1,0 +1,19 @@
+.menu {
+    background-color: #cf5529;
+    height: 10vh;
+}
+
+.menu img {
+    width: 8em;
+}
+
+.menu_img-wrapper{
+    flex: 1;
+    margin: 0.5em 0 ;
+}
+
+.menu p {
+    font-size: 1.3em;
+    color: white;
+    margin: 0 0.7em;
+}
