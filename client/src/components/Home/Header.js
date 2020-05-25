@@ -7,12 +7,20 @@ const Header = () => {
       <div className="header__left">
         <Typewriter
           options={{
-            cursor: "",
-            strings: ["<h1>Hello World</h1>", "<h1>Ca va ou quoi ?</h1>"],
+            strings: [
+              "<h1 class='white '>Hello</h1>",
+              "<h1 class='white'>world</h1>",
+              "<h1 class='white'>world</h1>",
+            ],
             autoStart: true,
             loop: true,
           }}
         />
+        <div>
+          <i className="icon fab fa-facebook-f"></i>
+          <i className="icon fab fa-whatsapp"></i>
+          <i className="icon fab fa-snapchat-ghost"></i>
+        </div>
       </div>
       <div className="header__right d-none d-md-block">right</div>
     </div>
