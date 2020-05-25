@@ -1,19 +1,56 @@
 .menu {
-  background-color: #cf5529;
-  height: 10vh;
-}
+    height: 10vh;
+    background-color: #96a2bd;
+  }
+  
+  .menu_link {
+    margin: 0.8em 1em;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+    font-size: 1.5em;
+  }
 
-.menu_logo {
-  width: 8em;
-}
+  .menu img {
+      width: 6em;
+  }
 
-.menu_img-wrapper {
-  flex: 1;
-  margin: 0.5em 0;
-}
 
-.menu p {
-  font-size: 1.3em;
-  color: white;
-  margin: 0 0.7em;
-}
+  
+  .menu_link:hover {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .i_wrapper {
+    margin: 0 2em;
+    padding: 1em 0;
+  }
+  
+  menu i {
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
+    margin-top: 0.2em;
+  }
+  
+  .menu_i--link {
+    color: white;
+  }
+  .menu_i--link:hover {
+    color: white;
+  }
+  
+  .menu_burger--content div {
+    width: 100%;
+    height: 2em;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    background-color: #353b48;
+  }
+  
+  .menu_burger--content div:hover {
+    background-color: #2f3640;
+  }
