@@ -1,56 +1,23 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 
 import logo from "../../assets/images/alternative.png";
-
-import "./Menu.css";
+import "./menu.css";
 
 const Header = () => {
-  const [burger, setBurger] = useState(false);
-
-  const handleClick = () => {
-    setBurger(!burger);
-  };
   return (
-    <div>
-      <header className="menu">
-        <div className=" d-flex justify-content-between ">
-          <div className=" image_menu-wrapper d-none d-md-block m-4">
-            <img src={logo} alt="alternative-code"/>
-          </div>
-          <div className="justify-content-end d-none d-md-flex menu_links">
-            <Link to="" className="menu_link">
-              <p>Home</p>
-            </Link>
-            <Link to="" className="menu_link">
-              <p>About</p>
-            </Link>
-            <Link to="" className="menu_link">
-              <p>Démo</p>
-            </Link>
-            <Link to="" className="menu_link">
-              <p>Contact</p>
-            </Link>
-          </div>
-        </div>
-        <div className="d-md-none d-flex justify-content-between i_wrapper">
-          <Link className="menu_i--link img_bis--wrapper" to="/">
-            <img src={logo} alt="alternative-code"/>
-          </Link>
-          <i className="fas fa-bars" onClick={handleClick}></i>
-        </div>
-      <div className="d-none d-sm-block d-md-none menu_burger">
-        {burger && (
-          <div className="menu_burger--content">
-            <div>Home</div>
-            <div>About</div>
-            <div>Démo</div>
-            <div>Contact</div>
-          </div>
-        )}
-      </div>
-      </header>
-    </div>
+    <Navbar className="menu"  expand="lg">
+      <Navbar.Brand href="#home"><img src={logo} alt="alternative-code"/></Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ml-auto">
+          <Nav.Link href="#home"><p>Home</p></Nav.Link>
+          <Nav.Link href="#link"><p>About</p></Nav.Link>
+          <Nav.Link href="#link"><p>Démo</p></Nav.Link>
+          <Nav.Link href="#link"><p>Contact</p></Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
