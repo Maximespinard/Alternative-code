@@ -4,7 +4,7 @@
   }
   
   .menu_link {
-    margin: 0.8em 1em;
+    margin: 0.8em 1em 0em 1em;
     text-decoration: none;
     color: #0B2540;
     height: 100%;
@@ -15,6 +15,12 @@
       width: 6em;
   }
 
+  .img_bis--wrapper{
+    position: relative;
+    right: 0.5em;
+    top: 0.5em;
+    padding-bottom: 0.5em;
+  }
 
   
   .menu_link:hover {

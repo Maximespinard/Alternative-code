@@ -34,7 +34,7 @@ const Header = () => {
           </div>
         </div>
         <div className="d-md-none d-flex justify-content-between i_wrapper">
-          <Link className="menu_i--link mt-2" to="/">
+          <Link className="menu_i--link img_bis--wrapper" to="/">
             <img src={logo} alt="alternative-code"/>
           </Link>
           <i className="fas fa-bars" onClick={handleClick}></i>
