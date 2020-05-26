@@ -1,5 +1,7 @@
 footer {
-  background: linear-gradient(#aaa1be 0%, #fefcf3 70%);
+  color: #fefcf3;
+  font-weight: 500;
+  background: linear-gradient(#496899, #335285);
   padding: 1em;
   -webkit-box-shadow: 0px -3px 77px -9px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px -3px 77px -9px rgba(0, 0, 0, 0.75);

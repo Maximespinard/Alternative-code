@@ -17,9 +17,15 @@ const Header = () => {
           }}
         />
         <div className="icon__wrapper">
-          <i className="icon fab fa-facebook-f"></i>
-          <i className="icon fab fa-whatsapp"></i>
-          <i className="icon fab fa-snapchat-ghost"></i>
+          <div className="icon">
+            <i className=" fab fa-facebook-f"></i>
+          </div>
+          <div className="icon">
+            <i className=" fab fa-whatsapp"></i>
+          </div>
+          <div className="icon">
+            <i className=" fab fa-snapchat-ghost"></i>
+          </div>
         </div>
       </div>
       <div className="header__right d-none d-md-block">right</div>
