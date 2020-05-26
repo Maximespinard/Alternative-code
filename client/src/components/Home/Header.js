@@ -1,34 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import Typewriter from "typewriter-effect";
 
 const Header = () => {
-  const test = useRef();
-
-  const infos = {
-    x: "",
-    y: "",
-  };
-  const [position, setPosition] = useState(infos);
-  useEffect(() => {
-    window.addEventListener("mousemove", (e) =>
-      setPosition({
-        x: e.pageX,
-        y: e.pageY,
-      })
-    );
-    test.current.style.top = position.y;
-    test.current.style.left = position.x;
-    console.log(test.current.style.top);
-  }, [setPosition, test]);
-  if (test?.current?.style?.top !== "") {
-    console.log(test?.current?.style?.top);
-  }
   return (
     <div className="header d-md-flex">
-      <p className="white">
-        X = {position.x} - Y = {position.y}
-      </p>
-      <div ref={test} className="cercle"></div>
       <div className="header__left">
         <div className="header__title">
           <Typewriter
@@ -56,7 +31,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="header__right d-none d-md-block">
+      <div className="header__right">
         <div>
           <div>
             <i className="fab fa-react"></i>
@@ -65,7 +40,6 @@ const Header = () => {
             <i className="fab fa-app-store-ios"></i>
             <i className="fab fa-google-play"></i>
             <i className="fab fa-node-js"></i>
-            <i className="fas fa-mobile-alt"></i>
             <i className="fab fa-google"></i>
             <i className="fab fa-safari"></i>
           </div>
