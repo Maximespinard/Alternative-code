@@ -134,5 +134,28 @@
 /* ----ABOUT----*/
 .about {
   height: 100vh;
-  background-color: #fefcf3;
+  background-color: #9688B7;
+}
+
+.about h2 {
+  font-size: 3em;
+  text-align: right;
+  margin: 1em 6em;
+
+}
+
+.about p {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  font-size: 1.3em;
+  line-height: 1.7em;
+  padding: 0.6em;
+}
+
+@media screen and (max-width: 1100px){
+  .about h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 1em 0em;
+  }
 }
