@@ -140,8 +140,8 @@
   font-size: 3em;
   text-align: right;
   margin: 0em 6em;
-  padding: 1em 0em;
   color: #0b2540;
+  padding-top: 1em;
 }
 
 .about p {

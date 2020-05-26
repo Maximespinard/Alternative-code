@@ -22,7 +22,7 @@ const About = () => {
           </p>
           <button>Voir ce qu'on peux faire</button>
         </div>
-        <div className="col-lg-6 d-none d-md-block">
+        <div className="col-lg-6 d-none d-md-block ml-4 mt-5">
           <img src={img} alt="creativity" />
         </div>
       </div>
