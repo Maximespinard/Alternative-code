@@ -60,6 +60,10 @@
   color: #fefcf3;
 }
 
+.icon__wrapper {
+  margin-top: 3em;
+}
+
 .icon {
   color: #fefcf3;
   background-color: #9688b7;
@@ -72,4 +76,3 @@
 .header__right {
   flex: 2;
 }
- 
