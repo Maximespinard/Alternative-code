@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 
 const index = () => {
   const date = new Date();

@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 import logo from "../../assets/images/alternative.png";
 import "./menu.css";
 
-const Header = () => {
+const Menu = () => {
   return (
     <Navbar className="menu" expand="lg">
       <Navbar.Brand href="#home">
@@ -18,7 +18,9 @@ const Header = () => {
             <p>Home</p>
           </Nav.Link>
           <Nav.Link href="#link">
-            <Link to="about" smooth={true} duration={2000}><p>About</p></Link>
+            <Link to="about" smooth={true} duration={2000}>
+              <p>About</p>
+            </Link>
           </Nav.Link>
           <Nav.Link href="#link">
             <p>Démo</p>
@@ -32,4 +34,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Menu;

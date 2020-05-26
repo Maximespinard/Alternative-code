@@ -52,19 +52,14 @@
 .menu_burger--content div:hover {
   background-color: rgb(240, 240, 240);
 }
-    height: fit-content;
-    background-color: #FEFCF3;
-  }
-  
-  .menu img {
-    width: 6em;
-  }
 
-  .menu p {
-    font-size: 1.3em;
-    color: #0B2540;
-    margin: 0 1em;
-    width: 100%;
-  }
+.menu img {
+  width: 6em;
+}
 
-  
+.menu p {
+  font-size: 1.3em;
+  color: #0b2540;
+  margin: 0 1em;
+  width: 100%;
+}
