@@ -1,7 +1,7 @@
 import React from "react";
-import { Navbar, NavDropdown, Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { Link as Scroll } from "react-scroll";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/alternative.png";
 import "./menu.css";
@@ -19,7 +19,9 @@ const Menu = () => {
             <p>Home</p>
           </Nav.Link>
           <Nav.Link href="#link">
-            <Scroll to="about" smooth={true} duration={2000}><p>About</p></Scroll>
+            <Scroll to="about" smooth={true} duration={2000}>
+              <p>About</p>
+            </Scroll>
           </Nav.Link>
           <Nav.Link href="#link">
             <p>Démo</p>
