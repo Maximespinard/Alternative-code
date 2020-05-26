@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import img from "../../assets/images/social-media.jpg";
 
 const About = () => {
@@ -20,7 +21,7 @@ const About = () => {
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </p>
-          <button>Voir ce qu'on peux faire</button>
+          <Link to="/login"><button>Voir ce qu'on peux faire</button></Link>
         </div>
         <div className="col-lg-6 d-none d-md-block ml-4 mt-5">
           <img src={img} alt="creativity" />

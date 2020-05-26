@@ -15,19 +15,19 @@ const Menu = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link href="#home">
-            <p>Home</p>
+          <Nav.Link>
+            <Link to="/"><p>Home</p></Link>
           </Nav.Link>
-          <Nav.Link href="#link">
+          <Nav.Link>
             <Scroll to="about" smooth={true} duration={2000}>
               <p>About</p>
             </Scroll>
           </Nav.Link>
-          <Nav.Link href="#link">
-            <p>Démo</p>
+          <Nav.Link>
+            <Link to="/login"><p>Démo</p></Link>
           </Nav.Link>
-          <Nav.Link href="#link">
-            <p>Contact</p>
+          <Nav.Link>
+            <Link to="/contact"><p>Contact</p></Link>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
