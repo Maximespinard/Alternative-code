@@ -11,12 +11,13 @@
 .demo {
   width: 100%;
   min-height: 84.5vh;
-  background-color: #fefcf3;
+  background-color: #ebe7d7;
 }
 .demo h2 {
   padding-top: 3em;
   font-size: 2.5em;
 }
+
 .demo_row1 {
   padding-top: 2%;
 }
