@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img from "../../assets/images/social-media.jpg";
+import img from "../../assets/images/social-media.png";
 
 const About = () => {
   return (
@@ -8,8 +8,8 @@ const About = () => {
       <div>
         <h2>Qui sommes nous ?</h2>
       </div>
-      <div className="row m-3">
-        <div className="col-lg-5 about_wrapper">
+      <div className="d-md-flex justify-content-row m-3">
+        <div className="col-md-6 about_wrapper">
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -21,9 +21,11 @@ const About = () => {
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </p>
-          <Link to="/login"><button>Voir ce qu'on peux faire</button></Link>
+          <Link to="/login">
+            <button>Voir ce qu'on peux faire</button>
+          </Link>
         </div>
-        <div className="col-lg-6 d-none d-md-block ml-4 mt-5">
+        <div className="col-md-6 d-none d-md-block image__about">
           <img src={img} alt="creativity" />
         </div>
       </div>

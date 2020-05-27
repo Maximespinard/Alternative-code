@@ -173,7 +173,6 @@
   transition: 1s;
 }
 
-
 @media screen and (max-width: 1000px) {
   .about h2 {
     font-size: 2em;
@@ -184,4 +183,14 @@
   .about_wrapper {
     border: none;
   }
+}
+
+.image__about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image__about img {
+  width: 80%;
 }

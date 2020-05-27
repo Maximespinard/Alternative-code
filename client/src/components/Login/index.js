@@ -43,10 +43,11 @@ const Login = (props) => {
 
   return (
     <div className="login d-flex justify-content-center align-items-center">
-      <div className="login-wrapper d-flex flex-column justify-content-center col-lg-5 col-xl-4 col-md-6 col-sm-8">
-        <Link className="icon" to="/">
-          <i className="fas fa-times "></i>
-        </Link>
+      <div className="login-wrapper d-flex col-md-5">
+        <i
+          onClick={() => props.history.push("/")}
+          className="icon__login fas fa-times "
+        ></i>
         <h2>Connexion</h2>
         {errorMessage}
         <div>
@@ -69,7 +70,7 @@ const Login = (props) => {
             />
             <button className="login_button">Go !</button>
             <Link to="/signup" className="login_p">
-              <p>Pas de compte ? S'inscrire !</p>
+              <p>Pas de compte ?</p>
             </Link>
           </form>
         </div>

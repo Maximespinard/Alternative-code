@@ -15,38 +15,48 @@
 }
 
 .signup-wrapper {
-  height: 80%;
-  background-color: #3a4141;
+  width: 90%;
+  height: 70%;
+  background-color: rgba(58, 65, 65, 0.8);
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 1em;
 }
 
 .signup h2 {
   color: white;
-  margin-bottom: 1em;
   font-size: 2.5em;
 }
 
 .signup form {
-  margin-left: 11%;
+  margin: 0 auto;
 }
 
 .signup_input {
-  margin: 1.5em;
+  margin: 1.5em auto;
   height: 3em;
   width: 100%;
   border-radius: 10px;
   border: none;
   background-color: #fefcf3;
   padding: 1em;
+  outline: none;
 }
 
 .signup_button {
-  margin: 1.5em;
+  margin: 1.5em auto;
   height: 3em;
   width: 100%;
   border-radius: 10px;
   border: none;
   background-color: #9e9d9a;
   font-weight: 500;
+}
+
+.signup_button:hover {
+  background-color: #476798;
+  color: #fefcf3;
 }
 
 .icon {
@@ -56,15 +66,20 @@
 }
 
 .sucessMessage {
-  color: #fefcf3;
-  font-size: 1.3em;
-  border: solid 2px black;
+  margin: 0 auto;
+  padding: 0.5em;
+  color: yellowgreen;
+  font-size: 1em;
+  border: solid 2px yellowgreen;
   width: fit-content;
+  text-align: center;
 }
 
 .errorMessage {
-  color: #fefcf3;
-  font-size: 1.3em;
+  margin: 0 auto;
+  padding: 0.5em;
+  color: red;
+  font-size: 1em;
   border: solid 2px red;
   width: fit-content;
   text-align: center;
