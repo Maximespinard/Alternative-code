@@ -18,7 +18,7 @@ const Header = (props) => {
   return (
     <div>
       <Navbar className="headerUser row" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
           <Link to="/demo">
             <img src={logo} alt="alternative-code" />
           </Link>
@@ -56,7 +56,10 @@ const Header = (props) => {
       {show ? (
         <div className="d-flex justify-content-end headerUser_info--selected--wrapper">
           <div className="headerUser_info--selected">
-            <p>Profile</p>
+            <Link to={{
+              pathname: `/demo/profile?=${props.user._id}`,
+              user : props.user
+              }}><p>Profile</p></Link>
             <button onClick={handleLogout}>Deconnexion</button>
           </div>
         </div>

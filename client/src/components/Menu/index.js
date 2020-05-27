@@ -9,7 +9,7 @@ import "./menu.css";
 const Menu = () => {
   return (
     <Navbar className="menu" expand="lg">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand>
         <img src={logo} alt="alternative-code" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

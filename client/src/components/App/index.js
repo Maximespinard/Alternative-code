@@ -6,7 +6,7 @@ import Signup from "../Signup";
 import Login from "../Login";
 import Welcome from "../Welcome";
 import Demo from "../Demo";
-
+import Profile from "../Profile";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/demo" component={Demo} />
-
+        <Route exact path="/demo/profile" component={Profile} />
       </Switch>
     </div>
   );
