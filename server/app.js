@@ -9,7 +9,7 @@ const Schema = mongoose.Schema;
 const DB = "mongodb://localhost/alternative-code";
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const expressJwt = require('express-jwt')
+const expressJwt = require("express-jwt");
 
 // connexion à la bdd
 mongoose
@@ -21,8 +21,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const secret = "JulRpz";
-app.use(expressJwt({secret: secret})
-.unless({ path: ['/api/auth', '/api/user/add']}))
+app.use(
+  expressJwt({ secret: secret }).unless({
+    path: ["/api/auth", "/api/user/add"],
+  })
+);
 
 const usersSchema = new Schema(
   {
@@ -75,27 +78,34 @@ app.post("/api/auth", (req, res) => {
         .status(501)
         .send({ error: `Aucun compte n'existe avec cette adresse email` });
     } else {
-
       const hash = user.password;
       bcrypt.compare(password, hash, (err, result) => {
         if (result === true) {
           const myToken = jwt.sign(
             {
               iss: "alternative-code.com",
+              user,
             },
             secret
           );
-          return res.status(200).send({
-              token: myToken,
-              isLogged: true,
-              user,
-          });
+          res.status(200).send({ token: myToken, id: user._id });
         } else {
-            res.status(500).send({error: 'Mot de passe incorrect'})
+          res.status(500).send({ error: "Mot de passe incorrect" });
         }
       });
     }
   });
 });
+
+// route en get pour récuperer l'user connecté 
+app.get('/api/user/:id', (req, res) => {
+  users.findOne({_id: req.params.id}, (err, user) => {
+    if (err) {
+      res.status(400).send({error: err})
+    } else {
+      res.status(200).send({response: user})
+    }
+  })
+})
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));

@@ -27,11 +27,11 @@ const Login = (props) => {
         email,
         password,
       })
-      .then(() => {
-        props.history.push("/demo");
+      .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        props.history.push(`/demo?id=${res.data.id}`);
       })
       .catch((err) => {
-        
         setTimeout(() => {
           setError("");
         }, 3000);

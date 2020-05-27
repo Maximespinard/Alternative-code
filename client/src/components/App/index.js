@@ -4,8 +4,9 @@ import "./App.css";
 
 import Signup from "../Signup";
 import Login from "../Login";
-
 import Welcome from "../Welcome";
+import Demo from "../Demo";
+
 
 const App = () => {
   return (
@@ -14,6 +15,8 @@ const App = () => {
         <Route exact path="/" component={Welcome} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/demo" component={Demo} />
+
       </Switch>
     </div>
   );

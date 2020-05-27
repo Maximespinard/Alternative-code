@@ -1,0 +1,15 @@
+/*
+  COLORS
+  WHITE : #FEFCF3
+  PURPLE : #9688B7
+  LIGHT BLUE : #496899
+  MIDDLE BLUE : #254470
+  DARK BLUE : #0B2540
+
+*/
+
+.demo {
+    width: 100%;
+    height: 100vh;
+    background-color: #FEFCF3 ;
+}
