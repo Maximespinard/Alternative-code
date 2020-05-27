@@ -1,6 +1,13 @@
 .menu {
   height: fit-content;
   background-color: #fefcf3;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  -webkit-box-shadow: 10px 10px 60px 0px rgba(138, 138, 138, 1);
+  -moz-box-shadow: 10px 10px 60px 0px rgba(138, 138, 138, 1);
+  box-shadow: 10px 10px 60px 0px rgba(138, 138, 138, 1);
+  z-index: 3;
 }
 
 .menu_link {

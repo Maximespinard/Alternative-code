@@ -1,0 +1,32 @@
+.contact__wrapper {
+  background-color: rosybrown;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__wrapper form {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: royalblue;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.contact__wrapper form input {
+  margin: 1em 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+}
+
+.contact__wrapper form button {
+  margin: 1em 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+}
