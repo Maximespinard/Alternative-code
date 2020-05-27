@@ -1,16 +1,16 @@
 .signup {
   width: 100%;
   height: 100vh;
-  background: #3e5151; /* fallback for old browsers */
+  background: #bdc3c7; /* fallback for old browsers */
   background: -webkit-linear-gradient(
-    to left,
-    #decba4,
-    #3e5151
+    to right,
+    #2c3e50,
+    #bdc3c7
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to left,
-    #decba4,
-    #3e5151
+    to right,
+    #2c3e50,
+    #bdc3c7
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -31,7 +31,7 @@
 
 .signup_input {
   margin: 1.5em;
-  height: 2.5em;
+  height: 3em;
   width: 100%;
   border-radius: 10px;
   border: none;
@@ -39,30 +39,33 @@
   padding: 1em;
 }
 
-
 .signup_button {
   margin: 1.5em;
-  height: 2.5em;
+  height: 3em;
   width: 100%;
   border-radius: 10px;
   border: none;
-  background-color: #fefcf3;
+  background-color: #9e9d9a;
   font-weight: 500;
 }
 
 .icon {
   color: white;
   cursor: pointer;
+  background-color: red;
 }
 
-.sucessMessage{
+.sucessMessage {
   color: #fefcf3;
   font-size: 1.3em;
   border: solid 2px black;
+  width: fit-content;
 }
 
-.errorMessage{
+.errorMessage {
   color: #fefcf3;
   font-size: 1.3em;
   border: solid 2px red;
+  width: fit-content;
+  text-align: center;
 }

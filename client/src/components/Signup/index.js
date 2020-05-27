@@ -47,20 +47,20 @@ const Signup = (props) => {
     }
   };
 
-  const successMessage = success !== "" ? <p className="sucessMessage">{success}</p> : null;
-  const errorMessage = error !== "" ? <p className="errorMessage">{error}</p> : null;
+  const successMessage =
+    success !== "" ? <p className="sucessMessage">{success}</p> : null;
+  const errorMessage =
+    error !== "" ? <p className="errorMessage">{error}</p> : null;
 
   return (
     <div className="signup d-flex justify-content-center align-items-center">
       <div className="signup-wrapper d-flex flex-column justify-content-center col-lg-5 col-xl-4 col-md-6 col-sm-8">
-        <div className="d-flex">
-          <Link className="icon" to="/login">
-            <i className="fas fa-arrow-circle-left "></i>
-          </Link>
-          <h2>Inscription</h2>
-        </div>
-          {successMessage}
-          {errorMessage}
+        <Link className="icon" to="/login">
+          <i class="fas fa-arrow-left"></i>
+        </Link>
+        <h2>Inscription</h2>
+        {successMessage}
+        {errorMessage}
         <div>
           <form onSubmit={handleSubmit} className="d-flex flex-column col-8">
             <input
