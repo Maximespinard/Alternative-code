@@ -5,9 +5,8 @@ import "./Signup.css";
 const Signup = (props) => {
   let userData = {
     email: "",
-    pseudo: "",
+    username: "",
     password: "",
-    passwordConfirmation: "",
   };
 
   const [passwordValid, setPasswordValid] = useState(false);
@@ -40,30 +39,32 @@ const Signup = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { email, pseudo, password, passwordConfirmation } = input;
+    const { email, username, password } = input;
     if (passwordValid) {
-      if (password === passwordConfirmation) {
-        axios
-          .post("http://localhost:8000/api/user/add", {
-            email,
-            username: pseudo,
-            password,
-          })
-          .then((res) => {
-            setSuccess(res.data.response);
-            setTimeout(() => {
-              setSuccess("");
-              props.history.push("/login");
-            }, 4000);
-          });
-      } else {
-        setError("Mot de passe non identique");
-        setTimeout(() => {
+      axios
+        .post("http://localhost:8000/api/user/add", {
+          email,
+          username,
+          password,
+        })
+        .then((res) => {
           setError("");
-        }, 4000);
-      }
+          setSuccess(res.data.response);
+          setTimeout(() => {
+            setSuccess("");
+            props.history.push("/login");
+          }, 3000);
+        })
+        .catch((err) => {
+          console.log(err);
+          setError("Une erreur s'est produite");
+          setTimeout(() => {
+            setError("");
+          }, 3000);
+        });
     } else {
       setPasswordValid(false);
+      setError("Eh Oh check ton mot de passe!");
     }
   };
 
@@ -80,8 +81,10 @@ const Signup = (props) => {
           className="icon__login fas fa-arrow-left "
         ></i>
         <h2>Inscription</h2>
-        {successMessage}
-        {errorMessage}
+        <div>
+          {successMessage}
+          {errorMessage}
+        </div>
         <div>
           <form onSubmit={handleSubmit} className="d-flex flex-column col-8">
             <input
@@ -94,8 +97,8 @@ const Signup = (props) => {
             />
             <input
               required
-              name="pseudo"
-              value={input.pseudo}
+              name="username"
+              value={input.username}
               onChange={handleChange}
               placeholder="Nom d'utilisateur"
               className="signup_input"

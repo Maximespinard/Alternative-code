@@ -57,9 +57,9 @@ app.post("/api/user/add", (req, res) => {
     username,
     password: bcrypt.hashSync(password, 10),
   });
-  user.save((err) => {
+  user.save((err, resp) => {
     if (err) {
-      res.status(400).send({ error: `Une erreur est survenue ${err}` });
+      res.status(400).send("PROBLEMMMME");
     } else {
       res.status(200).send({ response: "Votre compte a bien été créé " });
     }
@@ -97,15 +97,15 @@ app.post("/api/auth", (req, res) => {
   });
 });
 
-// route en get pour récuperer l'user connecté 
-app.get('/api/user/:id', (req, res) => {
-  users.findOne({_id: req.params.id}, (err, user) => {
+// route en get pour récuperer l'user connecté
+app.get("/api/user/:id", (req, res) => {
+  users.findOne({ _id: req.params.id }, (err, user) => {
     if (err) {
-      res.status(400).send({error: err})
+      res.status(400).send({ error: err });
     } else {
-      res.status(200).send({response: user})
+      res.status(200).send({ response: user });
     }
-  })
-})
+  });
+});
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));

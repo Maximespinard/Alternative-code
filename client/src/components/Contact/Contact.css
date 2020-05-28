@@ -1,5 +1,4 @@
 .contact__wrapper {
-  background-color: rosybrown;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,16 +11,27 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: royalblue;
+  background: linear-gradient(#254470, #0b2540);
   padding: 1em;
   border-radius: 10px;
 }
 
 .contact__wrapper form input {
-  margin: 1em 0;
+  margin: 0.5em 0;
   border-radius: 5px;
   border: none;
   font-size: 1.3em;
+  outline: none;
+  padding: 0.3em;
+}
+
+.contact__wrapper form textarea {
+  margin: 0.5em 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+  outline: none;
+  padding: 0.3em;
 }
 
 .contact__wrapper form button {
@@ -29,4 +39,8 @@
   border-radius: 5px;
   border: none;
   font-size: 1.3em;
+  outline: none;
+  padding: 0.3em;
+  background-color: #9688b7;
+  color: #fefcf3;
 }
