@@ -1,17 +1,17 @@
 .contact__wrapper {
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2em;
+  margin: 1em;
 }
 
 .contact__infos {
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
-  margin: 2em;
+  margin: 1em;
 }
 
 .contact__infos div {
@@ -23,11 +23,12 @@
   font-weight: 700;
   padding: 1em;
   border-radius: 8px;
+  margin: 1em auto;
 }
 
 .contact__wrapper form {
   color: #fefcf3;
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;

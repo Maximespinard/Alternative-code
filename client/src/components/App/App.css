@@ -5,5 +5,4 @@
 .scroller {
   position: -webkit-sticky;
   position: sticky;
-  right: 20px;
 }
