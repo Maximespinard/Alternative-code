@@ -10,6 +10,7 @@ const DB = "mongodb://localhost/alternative-code";
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const expressJwt = require("express-jwt");
+const nodemailer = require("nodemailer");
 
 // connexion à la bdd
 mongoose
@@ -23,7 +24,7 @@ app.use(bodyParser.json());
 const secret = "JulRpz";
 app.use(
   expressJwt({ secret: secret }).unless({
-    path: ["/api/auth", "/api/user/add"],
+    path: ["/api/auth", "/api/user/add", "/api/contact"],
   })
 );
 
@@ -105,6 +106,43 @@ app.get("/api/user/:id", (req, res) => {
     } else {
       res.status(200).send({ response: user });
     }
+  });
+});
+
+// ---------------NODEMAILER --------------------
+let transporter = nodemailer.createTransport({
+  host: "mail.alternative-code.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: "chris@alternative-code.com",
+    pass: "Reactjs13",
+  },
+});
+
+app.post("/api/contact", (req, res) => {
+  const { name, email, message } = req.body;
+  const htmlEmail = `
+  <h1>Contact via formulaire</h1>
+  <p>Name : ${name}</p>
+  <p>Name : ${email}</p>
+  <p>Name : ${message}</p>
+  `;
+
+  let mailOption = {
+    from: "chris@alternative-code.com",
+    to: "chris@alternative-code.com",
+    replyTo: "chris@alternative-code.com",
+    subject: "Formulaire",
+    text: message,
+    html: htmlEmail,
+  };
+
+  transporter.sendMail(mailOption, (err, info) => {
+    if (err) {
+      return console.log("Erreur : ", err);
+    }
+    console.log("Message envoyé : ", info);
   });
 });
 
