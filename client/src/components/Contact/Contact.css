@@ -4,9 +4,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 2em;
+}
+
+.contact__infos {
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin: 2em;
+}
+
+.contact__infos div {
+  display: flex;
+  font-size: 1.2em;
+  flex-direction: column-reverse;
+  background-color: #9688b7;
+  color: #fefcf3;
+  font-weight: 700;
+  padding: 1em;
+  border-radius: 8px;
 }
 
 .contact__wrapper form {
+  color: #fefcf3;
   width: 80%;
   display: flex;
   justify-content: center;
