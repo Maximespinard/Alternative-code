@@ -125,8 +125,8 @@ app.post("/api/contact", (req, res) => {
   const htmlEmail = `
   <h1>Contact via formulaire</h1>
   <p>Name : ${name}</p>
-  <p>Name : ${email}</p>
-  <p>Name : ${message}</p>
+  <p>Email : ${email}</p>
+  <p>Message : ${message}</p>
   `;
 
   let mailOption = {
