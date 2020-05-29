@@ -6,7 +6,7 @@ const index = () => {
   const year = date.getFullYear();
   return (
     <footer>
-      Copyright 2019 - {year} | All right reserved | Alternative Code
+      <p>Copyright 2019 - {year} | All right reserved | Alternative Code</p>
     </footer>
   );
 };

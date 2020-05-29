@@ -151,11 +151,11 @@
 }
 
 .about button {
-  margin-top: 1.5em;
+  margin: 1em auto;
   background-color: #0b2540;
   color: #fefcf3;
   height: 4em;
-  width: 20em;
+  width: 50%;
   border-radius: 15px;
   border: none;
   transition: 1s;

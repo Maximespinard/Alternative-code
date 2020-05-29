@@ -22,7 +22,7 @@ const About = () => {
             PageMaker including versions of Lorem Ipsum.
           </p>
           <Link to="/login">
-            <button>Voir ce qu'on peux faire</button>
+            <button>Démo</button>
           </Link>
         </div>
         <div className="col-md-6 d-none d-md-block image__about">

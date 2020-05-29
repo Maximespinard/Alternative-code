@@ -10,6 +10,7 @@ const RendezVous = (props) => {
     datetime: "",
   };
   const [form, setForm] = useState(data);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
     setForm({
@@ -27,6 +28,10 @@ const RendezVous = (props) => {
       })
       .then((res) => {
         console.log(res);
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, [4000]);
       })
       .catch((err) => {
         console.log(err);
@@ -39,6 +44,9 @@ const RendezVous = (props) => {
       </p>
       <form onSubmit={handleSubmit} className="col-md-5">
         <h3>Prenez un rendez-vous téléphonique avec un conseillé</h3>
+        {success && (
+          <h3 className="success">Votre rendez-vous à bien été pris</h3>
+        )}
         <input
           onChange={handleChange}
           value={form.name}
@@ -54,9 +62,10 @@ const RendezVous = (props) => {
           placeholder="Votre numéro de téléphone"
         />
         <input
-          type="datetime-local"
-          name="datetime"
+          onChange={handleChange}
           value={form.datetime}
+          name="datetime"
+          type="datetime-local"
           min={`${date.getFullYear()}-${date.getMonth()}-${date.getDate()}T${
             date.getHours
           }:${date.getMinutes()}`}

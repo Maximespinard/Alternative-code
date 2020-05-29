@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 const secret = "JulRpz";
 app.use(
   expressJwt({ secret: secret }).unless({
-    path: ["/api/auth", "/api/user/add", "/api/contact"],
+    path: ["/api/auth", "/api/user/add", "/api/contact", "/api/contact/rdv"],
   })
 );
 
@@ -142,7 +142,36 @@ app.post("/api/contact", (req, res) => {
     if (err) {
       return console.log("Erreur : ", err);
     }
-    console.log("Message envoyé : ", info);
+  });
+  res.status(200).send({
+    response: "Formulaire envoyé",
+  });
+});
+
+app.post("/api/contact/rdv", (req, res) => {
+  const { name, number, datetime } = req.body;
+  const htmlEmail = `
+  <h1>Prise de rendez-vous</h1>
+  <p>Name : ${name}</p>
+  <p>Number : ${number}</p>
+  <p>Date and hour : ${datetime}</p>
+  `;
+
+  let mailOption = {
+    from: "chris@alternative-code.com",
+    to: "chris@alternative-code.com",
+    replyTo: "chris@alternative-code.com",
+    subject: "Rendez-Vous",
+    html: htmlEmail,
+  };
+
+  transporter.sendMail(mailOption, (err, info) => {
+    if (err) {
+      return console.log("Erreur : ", err);
+    }
+  });
+  res.status(200).send({
+    response: "Rendez-vous validé",
   });
 });
 

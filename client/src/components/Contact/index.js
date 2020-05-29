@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useMemo } from "react";
+import React, { Fragment, useState } from "react";
 import axios from "axios";
 import "./Contact.css";
 import Menu from "../Menu";

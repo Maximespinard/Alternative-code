@@ -30,21 +30,22 @@
 }
 
 .login form {
-  margin-left: 11%;
+  margin: 0 auto;
 }
 
 .login_input {
-  margin: 1em;
+  margin: 1em auto;
   height: 3em;
   width: 100%;
   border-radius: 10px;
   border: none;
   background-color: #fefcf3;
   padding: 1em;
+  outline: none;
 }
 
 .login_button {
-  margin: 1em;
+  margin: 1em auto;
   height: 3em;
   width: 100%;
   border-radius: 10px;
@@ -54,7 +55,7 @@
 }
 
 .login_p {
-  margin-left: 2em;
+  text-align: center;
   color: #fefcf3;
   font-size: 1.3em;
 }
