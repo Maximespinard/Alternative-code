@@ -13,7 +13,7 @@ const Contact = () => {
   };
   const [form, setForm] = useState(data);
   const [rdv, setRdv] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(false);
 
   const handleChange = (e) => {
     setForm({
@@ -31,9 +31,9 @@ const Contact = () => {
       })
       .then((res) => {
         console.log(res);
-        setMessage("Votre message à bien été envoyé");
+        setMessage(true);
         setTimeout(() => {
-          setMessage("");
+          setMessage(false);
         }, 4000);
       })
       .catch((err) => {
@@ -66,7 +66,7 @@ const Contact = () => {
         {!rdv ? (
           <form onSubmit={handleSubmit} className="col-md-5">
             <h3>Parlez-nous de votre projet</h3>
-            {message !== "" ? <p className="success">{message}</p> : ""}
+            {message && <p className="success">Message envoyé</p>}
             <input
               onChange={handleChange}
               value={form.name}

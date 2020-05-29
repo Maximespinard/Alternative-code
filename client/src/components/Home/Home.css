@@ -199,3 +199,71 @@
 .image__about img {
   width: 80%;
 }
+
+/*
+  comment
+*/
+.comments__wrapper {
+  margin-top: 2em;
+  background-color: #0b2540;
+  padding: 0.5em;
+  color: #fefcf3;
+}
+.comment__form {
+  background-color: #9688b7;
+  margin: 1em auto;
+  color: #fefcf3;
+  padding: 1em;
+  border-radius: 5px;
+}
+.comment__form input {
+  width: 80%;
+  border: none;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 5px;
+}
+
+.comment__form textarea {
+  width: 80%;
+  border: none;
+  padding: 0.5em;
+}
+.star {
+  color: #fefcf3;
+  font-size: 1.2em;
+}
+.starSelected {
+  color: yellow;
+  font-size: 1.2em;
+}
+.star:hover {
+  color: yellow;
+  font-size: 1.2em;
+}
+
+.comment__form button {
+  border: none;
+  background-color: #496899;
+  color: #fefcf3;
+  font-weight: 700;
+  width: 50%;
+  margin: 0.5em 1em;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.comment {
+  margin: 1em auto;
+  padding: 1em;
+  border: #254470 1px solid;
+  border-radius: 5px;
+}
+
+.comment i {
+  color: yellow;
+}
+
+.comment i::before {
+  color: yellow;
+}

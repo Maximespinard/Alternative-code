@@ -11,6 +11,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const expressJwt = require("express-jwt");
 const nodemailer = require("nodemailer");
+let date = new Date();
 
 // connexion à la bdd
 mongoose
@@ -24,7 +25,14 @@ app.use(bodyParser.json());
 const secret = "JulRpz";
 app.use(
   expressJwt({ secret: secret }).unless({
-    path: ["/api/auth", "/api/user/add", "/api/contact", "/api/contact/rdv"],
+    path: [
+      "/api/auth",
+      "/api/user/add",
+      "/api/contact",
+      "/api/contact/rdv",
+      "/api/comment/add",
+      "/api/comment",
+    ],
   })
 );
 
@@ -44,11 +52,41 @@ const usersSchema = new Schema(
       type: String,
       required: true,
     },
+    createdAt: {
+      type: String,
+    },
   },
   { collection: "users" }
 );
 
+const comment = new Schema(
+  {
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    username: {
+      type: String,
+      required: true,
+    },
+    message: {
+      type: String,
+      required: true,
+    },
+    stars: {
+      type: Number,
+      required: true,
+    },
+    createdAt: {
+      type: String,
+    },
+  },
+  { collection: "comments" }
+);
+
 const users = mongoose.model("users", usersSchema);
+const comments = mongoose.model("comments", comment);
 
 // route en post pour créer un user
 app.post("/api/user/add", (req, res) => {
@@ -58,9 +96,10 @@ app.post("/api/user/add", (req, res) => {
     username,
     password: bcrypt.hashSync(password, 10),
   });
+
   user.save((err, resp) => {
     if (err) {
-      res.status(400).send("PROBLEMMMME");
+      res.status(400).send("PROBLEME");
     } else {
       res.status(200).send({ response: "Votre compte a bien été créé " });
     }
@@ -107,6 +146,39 @@ app.get("/api/user/:id", (req, res) => {
       res.status(200).send({ response: user });
     }
   });
+});
+
+// --------------- COMMENTS ------------------------
+app.get("/api/comment", (req, res) => {
+  comments.find({}, (err, resp) => {
+    if (err) {
+      res.status(400).send("Une erreur s'est produite");
+    } else {
+      res.status(200).send(resp);
+    }
+  });
+});
+
+app.post("/api/comment/add", (req, res) => {
+  const { email, username, message, stars, firstname } = req.body;
+  if (firstname === "") {
+    const comm = new comments({
+      email,
+      username,
+      message,
+      stars,
+      createdAt: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+    });
+    comm.save((err, resp) => {
+      if (err) {
+        res.status(400).send("PROBLEME");
+      } else {
+        res.status(200).send({ response: "Merci pour votre commentaire" });
+      }
+    });
+  } else {
+    res.status(401).send("ROBOT");
+  }
 });
 
 // ---------------NODEMAILER --------------------
