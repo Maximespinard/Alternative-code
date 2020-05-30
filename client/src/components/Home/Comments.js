@@ -1,5 +1,6 @@
 import React, { useState, useLayoutEffect } from "react";
 import axios from "axios";
+import { Carousel } from "react-bootstrap";
 
 const Comments = () => {
   const data = {
@@ -58,23 +59,27 @@ const Comments = () => {
     <div className="comments__wrapper">
       <h2>Ce qu'ils pensent de nous ...</h2>
       <div>
-        {reviews.map((review) => {
-          return (
-            <div key={review.message} className="comment col-md-6">
-              <div>
-                {review.stars} <i className="fas fa-star"></i>
-              </div>
-              <p>{review.message}</p>
-              <b>
-                {review.username} <small>le {review.createdAt}</small>
-              </b>
-            </div>
-          );
-        })}
+        <Carousel>
+          {reviews.map((review) => {
+            return (
+              <Carousel.Item>
+                <div key={review.message} className="comment col-md-6">
+                  <div>
+                    {review.stars} <i className="fas fa-star"></i>
+                  </div>
+                  <p>{review.message}</p>
+                  <b>
+                    {review.username} <small>le {review.createdAt}</small>
+                  </b>
+                </div>
+              </Carousel.Item>
+            );
+          })}
+        </Carousel>
       </div>
 
       <form onSubmit={handleSubmit} className="comment__form col-md-6">
-        <h3>Laissez-nous un commentaire</h3>
+        <h2>Laissez-nous un commentaire</h2>
         <input
           onChange={handleChange}
           type="text"
