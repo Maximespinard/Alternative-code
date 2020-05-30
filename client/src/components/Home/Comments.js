@@ -55,9 +55,19 @@ const Comments = () => {
       });
   }, []);
 
+  const icon = (num) => {
+    return (
+      <i
+        name="stars"
+        onClick={() => setForm({ ...form, stars: num })}
+        className={`${form.stars >= num ? "starSelected" : "star"} fas fa-star`}
+      ></i>
+    );
+  };
+
   return (
     <div className="comments__wrapper">
-      <h2>Ce qu'ils pensent de nous ...</h2>
+      <h2>Vos avis</h2>
       <div>
         <Carousel>
           {reviews.map((review) => {
@@ -104,45 +114,16 @@ const Comments = () => {
           onChange={handleChange}
           name="message"
           cols="30"
-          rows="10"
+          rows="5"
+          maxLength="150"
           placeholder="Votre message"
         ></textarea>
         <div>
-          <i
-            name="stars"
-            onClick={() => setForm({ ...form, stars: 1 })}
-            className={`${
-              form.stars >= 1 ? "starSelected" : "star"
-            } fas fa-star`}
-          ></i>
-          <i
-            name="stars"
-            onClick={() => setForm({ ...form, stars: 2 })}
-            className={`${
-              form.stars >= 2 ? "starSelected" : "star"
-            } fas fa-star`}
-          ></i>
-          <i
-            name="stars"
-            onClick={() => setForm({ ...form, stars: 3 })}
-            className={`${
-              form.stars >= 3 ? "starSelected" : "star"
-            } fas fa-star`}
-          ></i>
-          <i
-            name="stars"
-            onClick={() => setForm({ ...form, stars: 4 })}
-            className={`${
-              form.stars >= 4 ? "starSelected" : "star"
-            } fas fa-star`}
-          ></i>
-          <i
-            name="stars"
-            onClick={() => setForm({ ...form, stars: 5 })}
-            className={`${
-              form.stars >= 5 ? "starSelected" : "star"
-            } fas fa-star`}
-          ></i>
+          {icon(1)}
+          {icon(2)}
+          {icon(3)}
+          {icon(4)}
+          {icon(5)}
         </div>
         <button>Envoyer</button>
       </form>
