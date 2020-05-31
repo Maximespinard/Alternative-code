@@ -1,27 +1,79 @@
 .contact__wrapper {
-  background-color: rosybrown;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin: 1em;
+}
+
+.contact__infos {
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1em;
+}
+
+.contact__infos div {
+  display: flex;
+  font-size: 1.2em;
+  flex-direction: column-reverse;
+  background-color: #9688b7;
+  color: #fefcf3;
+  font-weight: 700;
+  padding: 1em;
+  border-radius: 8px;
+  margin: 1em auto;
+}
+
+.contact__infos div a {
+  color: #fefcf3;
 }
 
 .contact__wrapper form {
-  width: 80%;
+  color: #fefcf3;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: royalblue;
+  background: linear-gradient(#254470, #0b2540);
   padding: 1em;
   border-radius: 10px;
 }
 
 .contact__wrapper form input {
-  margin: 1em 0;
+  margin: 0.5em 0;
   border-radius: 5px;
   border: none;
   font-size: 1.3em;
+  outline: none;
+  padding: 0.3em;
+}
+.contact__wrapper form select {
+  margin: 0.5em 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+  outline: none;
+  padding: 0.3em;
+}
+
+.contact__wrapper form select option {
+  margin: 0.5em 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+  outline: none;
+  padding: 0.3em;
+}
+
+.contact__wrapper form textarea {
+  margin: 0.5em 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+  outline: none;
+  padding: 0.3em;
 }
 
 .contact__wrapper form button {
@@ -29,4 +81,31 @@
   border-radius: 5px;
   border: none;
   font-size: 1.3em;
+  outline: none;
+  padding: 0.3em;
+  background-color: #9688b7;
+  color: #fefcf3;
+}
+
+.rdv__wrapper {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.rdv__wrapper p {
+  cursor: pointer;
+}
+.rdv__wrapper p:hover {
+  color: #9688b7;
+}
+
+.success {
+  color: yellowgreen;
+  border: yellowgreen 1px solid;
+  padding: 0.5em;
+  text-align: center;
 }

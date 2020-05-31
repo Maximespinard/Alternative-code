@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img from "../../assets/images/social-media.png";
 
 const About = () => {
   return (
@@ -22,11 +21,14 @@ const About = () => {
             PageMaker including versions of Lorem Ipsum.
           </p>
           <Link to="/login">
-            <button>Voir ce qu'on peux faire</button>
+            <button>Démo</button>
           </Link>
         </div>
         <div className="col-md-6 d-none d-md-block image__about">
-          <img src={img} alt="creativity" />
+          <img
+            src="https://i.pinimg.com/originals/e5/93/ab/e593ab0589d5f1b389e4dfbcce2bce20.gif"
+            alt="creativity"
+          />
         </div>
       </div>
     </div>

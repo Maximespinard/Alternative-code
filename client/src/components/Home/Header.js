@@ -32,6 +32,7 @@ const Header = () => {
             </div>
           </div>
         </div>
+        <div className="d-md-none"></div>
         <div className="header__right d-none d-md-block">
           <div>
             <div>
