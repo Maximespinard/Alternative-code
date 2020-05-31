@@ -1,0 +1,16 @@
+.profile {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #ffabee
+}
+
+.profile h2{
+    padding: 1.5em 0 1em 0;
+}
+
+.profile_form--wrapper{
+    width: 80%;
+    height: 70vh;
+    background-color: aqua;
+    margin: auto;
+}

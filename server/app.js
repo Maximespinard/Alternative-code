@@ -28,6 +28,8 @@ app.use(
     path: [
       "/api/auth",
       "/api/user/add",
+      "/api/user/update",
+      "/api/user/delete",
       "/api/contact",
       "/api/contact/rdv",
       "/api/comment/add",
@@ -85,13 +87,13 @@ const comment = new Schema(
   { collection: "comments" }
 );
 
-const users = mongoose.model("users", usersSchema);
+const Users = mongoose.model("users", usersSchema);
 const comments = mongoose.model("comments", comment);
 
 // route en post pour créer un user
 app.post("/api/user/add", (req, res) => {
   const { email, username, password } = req.body;
-  const user = new users({
+  const user = new Users({
     email,
     username,
     password: bcrypt.hashSync(password, 10),
@@ -109,7 +111,7 @@ app.post("/api/user/add", (req, res) => {
 // route en post pour login
 app.post("/api/auth", (req, res) => {
   const { email, password } = req.body;
-  users.findOne({ email }, (err, user) => {
+  Users.findOne({ email }, (err, user) => {
     if (err) {
       res.status(500).send({ error: ` Une erreur est survenue ${err}` });
     }
@@ -139,11 +141,40 @@ app.post("/api/auth", (req, res) => {
 
 // route en get pour récuperer l'user connecté
 app.get("/api/user/:id", (req, res) => {
-  users.findOne({ _id: req.params.id }, (err, user) => {
+  Users.findOne({ _id: req.params.id }, (err, user) => {
     if (err) {
       res.status(400).send({ error: err });
     } else {
       res.status(200).send({ response: user });
+    }
+  });
+});
+
+// route en post pour modifier les données d'un user
+app.post("/api/user/update", (req, res) => {
+  console.log(req.body);
+  Users.findOneAndUpdate(
+    { _id: req.body.id },
+    { email: req.body.email },
+    { username: req.body.username },
+    (err) => {
+      if (err) {
+        res.status(400).send("shit");
+      } else {
+        res.status(200).send("send nude");
+      }
+    }
+  );
+});
+
+// route en post pour delete un user
+app.post("/api/user/delete", (req, res) => {
+  const { id } = req.body;
+  Users.deleteOne({_id: id}, (err) => {
+    if (err) {
+      res.status(400).send({error: 'Une erreur est survenue'})
+    } else {
+      res.status(200).send({response: 'Votre compte a bien été supprimé, vous allez être redirigé'})
     }
   });
 });

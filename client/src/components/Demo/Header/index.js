@@ -53,7 +53,6 @@ const Header = (props) => {
           </div>
         </Navbar.Collapse>
       </Navbar>
-      {show ? (
         <div className="d-flex justify-content-end headerUser_info--selected--wrapper">
           <div className="headerUser_info--selected">
             <Link to={{
@@ -63,7 +62,7 @@ const Header = (props) => {
             <button onClick={handleLogout}>Deconnexion</button>
           </div>
         </div>
-      ) : null}
+     
     </div>
   );
 };

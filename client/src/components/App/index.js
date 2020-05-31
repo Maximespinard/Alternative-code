@@ -7,6 +7,8 @@ import Login from "../Login";
 import Welcome from "../Welcome";
 import Demo from "../Demo";
 import Contact from "../Contact";
+import Profile from "../Demo/Profile";
+
 
 const App = () => {
   return (
@@ -17,6 +19,7 @@ const App = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/demo" component={Demo} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/demo/profile" component={Profile} />
       </Switch>
     </div>
   );
