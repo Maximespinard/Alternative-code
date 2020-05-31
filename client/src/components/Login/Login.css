@@ -15,8 +15,12 @@
 }
 
 .login-wrapper {
-  height: 80%;
-  background-color: #3a4141;
+  width: 90%;
+  height: 70%;
+  background-color: rgba(58, 65, 65, 0.8);
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 .login h2 {
@@ -30,7 +34,7 @@
 }
 
 .login_input {
-  margin: 1.5em;
+  margin: 1em;
   height: 3em;
   width: 100%;
   border-radius: 10px;
@@ -40,7 +44,7 @@
 }
 
 .login_button {
-  margin: 1.5em;
+  margin: 1em;
   height: 3em;
   width: 100%;
   border-radius: 10px;
@@ -59,12 +63,17 @@
   color: #fefcf3;
 }
 
-.icon {
+.icon__login {
   color: white;
   cursor: pointer;
+  background-color: #476798;
+  border-radius: 50%;
+  height: 1em;
+  width: 1em;
 }
 
-.icon:hover {
+.icon__login:hover {
   text-decoration: none;
-  color: white;
+  color: #476798;
+  background-color: white;
 }

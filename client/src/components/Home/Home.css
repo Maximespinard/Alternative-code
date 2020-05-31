@@ -136,10 +136,10 @@
 
 .about h2 {
   font-size: 3em;
-  text-align: right;
-  margin: 0em 6em;
+  text-align: center;
+  margin: 0em auto;
   color: #0b2540;
-  padding-top: 1em;
+  padding: 1em;
 }
 
 .about p {
@@ -147,7 +147,7 @@
   font-size: 1.3em;
   line-height: 1.7em;
   padding: 0.6em;
-  color: #0b2540;
+  color: #fefcf3;
 }
 
 .about button {
@@ -162,17 +162,21 @@
 }
 
 .about_wrapper {
-  border: 3px solid #0b2540;
   padding: 2em;
-  margin: 0 0.5em;
+  margin: 1em auto;
   width: 100%;
+  background: linear-gradient(#9688b7, #496899);
+
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.75);
 }
 
 .about button:hover {
   transform: scale(1.1);
   transition: 1s;
 }
-
 
 @media screen and (max-width: 1000px) {
   .about h2 {
@@ -184,4 +188,14 @@
   .about_wrapper {
     border: none;
   }
+}
+
+.image__about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image__about img {
+  width: 80%;
 }

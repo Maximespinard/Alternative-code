@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useMemo } from "react";
 import axios from "axios";
 import "./Signup.css";
 
@@ -11,6 +10,7 @@ const Signup = (props) => {
     passwordConfirmation: "",
   };
 
+  const [passwordValid, setPasswordValid] = useState(false);
   const [input, setInput] = useState(userData);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -22,28 +22,48 @@ const Signup = (props) => {
     });
   };
 
+  useMemo(() => {
+    let maj = /[A-Z]/g;
+    let min = /[a-z]/g;
+    let num = /[0-9]/g;
+    if (
+      input.password.match(maj) &&
+      input.password.match(min) &&
+      input.password.match(num) &&
+      input.password.length >= 6
+    ) {
+      setPasswordValid(true);
+    } else {
+      setPasswordValid(false);
+    }
+  }, [input.password]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, pseudo, password, passwordConfirmation } = input;
-    if (password === passwordConfirmation) {
-      axios
-        .post("http://localhost:8000/api/user/add", {
-          email,
-          username: pseudo,
-          password,
-        })
-        .then((res) => {
-          setSuccess(res.data.response);
-          setTimeout(() => {
-            setSuccess("");
-            props.history.push("/login");
-          }, 4000);
-        });
+    if (passwordValid) {
+      if (password === passwordConfirmation) {
+        axios
+          .post("http://localhost:8000/api/user/add", {
+            email,
+            username: pseudo,
+            password,
+          })
+          .then((res) => {
+            setSuccess(res.data.response);
+            setTimeout(() => {
+              setSuccess("");
+              props.history.push("/login");
+            }, 4000);
+          });
+      } else {
+        setError("Mot de passe non identique");
+        setTimeout(() => {
+          setError("");
+        }, 4000);
+      }
     } else {
-      setError("Mot de passe non identique");
-      setTimeout(() => {
-        setError("");
-      }, 4000);
+      setPasswordValid(false);
     }
   };
 
@@ -54,16 +74,18 @@ const Signup = (props) => {
 
   return (
     <div className="signup d-flex justify-content-center align-items-center">
-      <div className="signup-wrapper d-flex flex-column justify-content-center col-lg-5 col-xl-4 col-md-6 col-sm-8">
-        <Link className="icon" to="/login">
-          <i class="fas fa-arrow-left"></i>
-        </Link>
+      <div className="signup-wrapper d-flex col-md-5">
+        <i
+          onClick={() => props.history.push("/login")}
+          className="icon__login fas fa-arrow-left "
+        ></i>
         <h2>Inscription</h2>
         {successMessage}
         {errorMessage}
         <div>
           <form onSubmit={handleSubmit} className="d-flex flex-column col-8">
             <input
+              required
               name="email"
               value={input.email}
               onChange={handleChange}
@@ -71,29 +93,32 @@ const Signup = (props) => {
               className="signup_input"
             />
             <input
+              required
               name="pseudo"
               value={input.pseudo}
               onChange={handleChange}
               placeholder="Nom d'utilisateur"
               className="signup_input"
             />
+
             <input
+              required
+              className="signup_input"
               name="password"
               value={input.password}
               onChange={handleChange}
               placeholder="Mot de passe"
-              className="signup_input"
               type="password"
             />
-            <input
-              name="passwordConfirmation"
-              value={input.passwordConfirmation}
-              onChange={handleChange}
-              placeholder="Confirmation du mot de passe"
-              className="signup_input"
-              type="password"
-            />
-            <button className="signup_button">S'inscrire</button>
+            {passwordValid && (
+              <button className="signup_button">S'inscrire</button>
+            )}
+            {!passwordValid && (
+              <small className="white">
+                Votre mot de passe doit contenir au moins 6 caractères , [A -Z]
+                , [a - z] , [0- 9]
+              </small>
+            )}
           </form>
         </div>
       </div>

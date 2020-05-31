@@ -57,8 +57,8 @@ const Header = (props) => {
         <div className="d-flex justify-content-end headerUser_info--selected--wrapper">
           <div className="headerUser_info--selected">
             <Link to={{
-              pathname: `/demo/profile?=${props.user._id}`,
-              user : props.user
+              pathname: `/demo/profile?id=${props.user._id}`,
+              state : props.user
               }}><p>Profile</p></Link>
             <button onClick={handleLogout}>Deconnexion</button>
           </div>
