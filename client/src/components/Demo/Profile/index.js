@@ -69,6 +69,9 @@ const Profile = (props) => {
   return (
     <div className="profile">
       <div className="profile_form--wrapper">
+        <p onClick={props.handleProfile} className="profile_exit">
+          <i className="fas fa-times "></i>
+        </p>
         <form className="profile_form">
           <input
             type="text"

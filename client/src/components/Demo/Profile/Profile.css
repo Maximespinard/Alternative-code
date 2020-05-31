@@ -1,6 +1,6 @@
 .profile {
     width: 100%;
-    height: 20em;
+    height: 30em;
     display: flex;
 }
 
@@ -8,10 +8,11 @@
 
 .profile_form--wrapper{
     width: 80%;
-    height: fit-content;
+    height: 20em;
     background-color: #FEFCF3;
     margin: auto;
     border-radius: 10px;
+    
 }
 
 .profile_form{
@@ -24,7 +25,8 @@
 }
 
 .profile_form input {
-    margin: 0.5em auto;
+    padding: 0.5em;
+    margin-bottom: 1em;
     width: 90%;
     background-color: transparent;
     border: solid black 1px;
@@ -43,4 +45,11 @@
 
 .profile_form button{
     font-size: 1em;
+    margin-top: .5em;
+}
+
+.profile_exit{
+    text-align: right;
+    margin: 0.5em 0.5em 0 0;
+    font-size: 2em;
 }

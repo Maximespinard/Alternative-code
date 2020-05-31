@@ -43,6 +43,7 @@ const Demo = (props) => {
     setshowWeather(!showWeather);
   };
 
+
   return (
     <div className="demo-wrapper">
       <Header props={props} user={user} />
@@ -51,7 +52,7 @@ const Demo = (props) => {
         <div className="row demo_row1 d-flex justify-content-between  ml-3 mr-3">
           <div className="col-lg-3 demo_col d-flex">
             {showProfile ? (
-                <Profile user={user} />
+              <Profile user={user} handleProfile={handleProfile} />
             ) : (
               <button onClick={handleProfile}>
                 Modifier votre profile par exemple
@@ -60,7 +61,7 @@ const Demo = (props) => {
           </div>
           <div className="col-lg-3 demo_col d-flex">
             {showWeather ? (
-              <Weather />
+              <Weather handleWeather={handleWeather}  />
             ) : (
               <button onClick={handleWeather}>Voir la météo</button>
             )}

@@ -1,5 +1,49 @@
+
+/*
+  COLORS
+  WHITE : #FEFCF3
+  PURPLE : #9688B7
+  LIGHT BLUE : #496899
+  MIDDLE BLUE : #254470
+  DARK BLUE : #0B2540
+
+*/
 .weather {
     width: 90%;
     height: 80%;
-    background-color: turquoise;
+    background-color: #FEFCF3;
+    border-radius: 10px;
 }
+
+.weather--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em;
+}
+
+.weather input {
+    margin-right: 0.5em;
+    height: 2.5em;
+}
+
+.weather i {
+   cursor: pointer;
+   font-size: 2em;
+}
+
+.weather_result{
+    line-height: 2em;
+}
+
+.weather_p--result{
+    font-size: 1.3em;
+    margin: 0.5em;
+}
+
+.weather_exit{
+    text-align: right;
+    margin: 1em;
+}
+
+
