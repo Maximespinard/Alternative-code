@@ -1,11 +1,9 @@
 .headerUser {
   height: fit-content;
   background-color: #fefcf3;
-  width: 100%;
 }
 
 .headerUser_link {
-  margin: 0.8em 1em;
   text-decoration: none;
   color: #0b2540;
   height: 100%;
@@ -22,10 +20,7 @@
   color: #0b2540;
 }
 
-.i_wrapper {
-  margin: 0 2em;
-  padding: 1em 0;
-}
+
 
 .headerUser i {
   font-size: 2em;
@@ -62,65 +57,39 @@
 .headerUser_link {
   font-size: 1.3em;
   color: #0b2540;
-  margin: 0 1em;
+  margin: 0;
   width: 100%;
 }
 
 .avatar {
-  margin-left: 1.5em;
   font-size: 2.2em !important;
 }
 
-.headerUser_arrow {
-  font-size: 1.2em !important;
-  color: #fefcf3;
-  padding: 0.6em 0.5em 0 0.3em;
-}
 
 .headerUser_p {
   font-size: 1.3em;
   margin: 0.3em 0 0 0.3em;
 }
 
-.headerUser_p:hover {
-  color: #496899;
+.headerUser-infos{
+  margin: 0.5em 2em 0 0;
 }
 
-.headerUser-infos:hover {
-  cursor: pointer;
+.headerUser button {
+  width: fit-content;
+  margin: 0.5em auto;
 }
 
-.headerUser_info--selected--wrapper{
-  background-color: #fefcf3;
-}
-
-.headerUser_info--selected {
-  width: 15em;
-  height: fit-content;
-  background-color: #0b2540;
-  border-radius: 15px;
-
-}
-
-.headerUser_info--selected p {
-  color: #fefcf3;
-  font-size: 1.4em;
-  margin: 1em 0;
-}
-
-.headerUser_info--selected p:hover {
-  cursor: pointer;
-  color: rgb(197, 197, 197);
-}
-
-.headerUser_info--selected button {
-  background-color: #fefcf3;
-  margin-bottom: 1em;
-  border: none;
-  font-size: 1.2em;
-  padding: 0.2em 1em;
-}
-
-.headerUser_info--selected button:hover {
-    background-color: rgb(197, 197, 197)
+@media screen and (min-width: 992px){
+  .headerUser_link{
+    margin: 0 1em;
   }
+  .headerUser button {
+    margin: 0 2em;
+  }
+
+  .headerUser-infos{
+    margin-right: 2em;
+  }
+  
+}

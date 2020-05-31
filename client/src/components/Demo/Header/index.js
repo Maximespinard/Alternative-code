@@ -7,14 +7,25 @@ import "./Header.css";
 
 const Header = (props) => {
   const [show, setShow] = useState(false);
+
   const handleClick = () => {
-    setShow(!show);
+    if (show == false) {
+      setShow(true);
+      document
+        .querySelector(".headerUser_info--selected--wrapper")
+        .classList.add("open");
+    } else {
+      setShow(false);
+      document
+        .querySelector(".headerUser_info--selected--wrapper")
+        .classList.remove("open");
+    }
   };
 
   const handleLogout = () => {
-      localStorage.clear()
-      props.props.history.push('/')
-  }
+    localStorage.clear();
+    props.props.history.push("/");
+  };
   return (
     <div>
       <Navbar className="headerUser row" expand="lg">
@@ -27,7 +38,6 @@ const Header = (props) => {
           <div onClick={handleClick} className="d-flex headerUser-infos">
             <i className="fas fa-user-circle avatar d-lg-none "></i>
             <p className="headerUser_p d-lg-none ">{props.user.username}</p>
-            <i className=" headerUser_arrow fas fa-sort-down d-lg-none "></i>
           </div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </div>
@@ -43,26 +53,26 @@ const Header = (props) => {
                 <p className="headerUser_link">Contact</p>
               </Link>
             </Nav.Link>
+            <Nav.Link>
+              <Link
+                to={{
+                  pathname: `/demo/profile?id=${props.user._id}`,
+                  state: props.user,
+                }}
+              >
+                <p className="headerUser_link">Profile</p>
+              </Link>
+            </Nav.Link>
+          <button onClick={handleLogout}>Deconnexion</button>
           </Nav>
-          <div onClick={handleClick} className="d-flex headerUser-infos">
+          <div className="d-flex headerUser-infos mr-3 mb-1">
             <i className="fas fa-user-circle avatar d-none d-lg-block"></i>
             <p className="headerUser_p d-none d-lg-block">
               {props.user.username}
             </p>
-            <i className=" headerUser_arrow fas fa-sort-down d-none d-lg-block"></i>
           </div>
         </Navbar.Collapse>
       </Navbar>
-        <div className="d-flex justify-content-end headerUser_info--selected--wrapper">
-          <div className="headerUser_info--selected">
-            <Link to={{
-              pathname: `/demo/profile?id=${props.user._id}`,
-              state : props.user
-              }}><p>Profile</p></Link>
-            <button onClick={handleLogout}>Deconnexion</button>
-          </div>
-        </div>
-     
     </div>
   );
 };
