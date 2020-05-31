@@ -13,6 +13,8 @@ const Comments = () => {
 
   const [form, setForm] = useState(data);
   const [reviews, setReviews] = useState([]);
+  const [wantDelete, setWantDelete] = useState(false);
+  const [author, setAuthor] = useState("");
 
   const handleChange = (e) => {
     setForm({
@@ -65,17 +67,53 @@ const Comments = () => {
     );
   };
 
+  const handleDeleteChange = (e) => {
+    setAuthor(e.target.value);
+  };
+  const handleDelete = (e, authorEmail, commentId) => {
+    e.preventDefault();
+    if (author === authorEmail) {
+      axios
+        .delete(`http://localhost:8000/api/comment/${commentId}`)
+        .then((res) => {
+          console.log("COOOOOOLLLL");
+        })
+        .catch((err) => {
+          console.log("ERREUUUR");
+        });
+    } else {
+      console.log("Erreur email");
+    }
+  };
+
   return (
     <div className="comments__wrapper">
       <h2>Vos avis</h2>
       <div>
         <Carousel>
           {reviews.map((review) => {
+            console.log(review._id);
             return (
               <Carousel.Item>
                 <div key={review.message} className="comment col-md-6">
                   <div>
                     {review.stars} <i className="fas fa-star"></i>
+                    <p onClick={() => setWantDelete(!wantDelete)}>Supprimer</p>
+                    {wantDelete && (
+                      <form
+                        onSubmit={(e) =>
+                          handleDelete(e, review.email, review._id)
+                        }
+                      >
+                        <p>Vous voulez supprimer ce commentaire ?</p>{" "}
+                        <input
+                          onChange={handleDeleteChange}
+                          value={author}
+                          type="email"
+                          placeholder="Saisissez votre email"
+                        />
+                      </form>
+                    )}
                   </div>
                   <p>{review.message}</p>
                   <b>
@@ -91,12 +129,14 @@ const Comments = () => {
       <form onSubmit={handleSubmit} className="comment__form col-md-6">
         <h2>Laissez-nous un commentaire</h2>
         <input
+          required
           onChange={handleChange}
           type="text"
           name="username"
           placeholder="Votre nom"
         />
         <input
+          required
           onChange={handleChange}
           type="email"
           name="email"
@@ -111,6 +151,7 @@ const Comments = () => {
         />
         <br />
         <textarea
+          required
           onChange={handleChange}
           name="message"
           cols="30"
