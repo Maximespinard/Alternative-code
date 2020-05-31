@@ -34,6 +34,7 @@ app.use(
       "/api/contact/rdv",
       "/api/comment/add",
       "/api/comment",
+      "/api/comment/:id",
     ],
   })
 );
@@ -210,6 +211,22 @@ app.post("/api/comment/add", (req, res) => {
   } else {
     res.status(401).send("ROBOT");
   }
+});
+
+app.delete("/api/comment/:id", (req, res) => {
+  const id = req.params.id;
+  Member.findByIdAndDelete(id, (err, user) => {
+    if (err || !user) {
+      res.status(400).send({
+        error: true,
+        message: "User not found",
+      });
+    } else {
+      res.status(200).send({
+        user: user,
+      });
+    }
+  });
 });
 
 // ---------------NODEMAILER --------------------
