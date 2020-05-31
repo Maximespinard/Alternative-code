@@ -19,7 +19,6 @@ const Weather = (props) => {
   const [locationUser, setLocationUser] = useState(locationUserDatas);
   const [input, setInput] = useState("");
   const [weather, setWeather] = useState({});
-  const [backgroundContainer, setBackgroundContainer] = useState("");
 
   //au clique sur le button localisation je choppe la longitude et latitude
   //puis je converti ces données en ville et je l'insert dans l'input
@@ -92,12 +91,9 @@ const Weather = (props) => {
 
   return (
     <div className="weather">
-       <p 
-       onClick={props.handleWeather}
-       className="weather_exit">
-        <i 
-          className="fas fa-times "
-        ></i></p>
+      <p onClick={props.handleWeather} className="weather_exit">
+        <i className="fas fa-times "></i>
+      </p>
       <div className="weather--wrapper">
         <input
           onChange={(e) => setInput(e.target.value)}
@@ -107,9 +103,8 @@ const Weather = (props) => {
           placeholder="Votre position"
         />
         <i
-          className="weather_search"
           onClick={getLocation}
-          className="fas fa-crosshairs"
+          className="weather_search fas fa-crosshairs"
         ></i>
       </div>
       {typeof weather.main != "undefined" ? (

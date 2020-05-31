@@ -6,11 +6,13 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/alternative.png";
 import "./menu.css";
 
-const Menu = () => {
+const Menu = (props) => {
   return (
     <Navbar className="menu" expand="lg">
       <Navbar.Brand>
-        <img src={logo} alt="alternative-code" />
+        <Link to="/">
+          <img src={logo} alt="alternative-code" />
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

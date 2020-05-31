@@ -9,7 +9,7 @@ const Header = (props) => {
   const [show, setShow] = useState(false);
 
   const handleClick = () => {
-    if (show == false) {
+    if (show === false) {
       setShow(true);
       document
         .querySelector(".headerUser_info--selected--wrapper")
@@ -53,7 +53,7 @@ const Header = (props) => {
                 <p className="headerUser_link">Contact</p>
               </Link>
             </Nav.Link>
-          <button onClick={handleLogout}>Deconnexion</button>
+            <button onClick={handleLogout}>Deconnexion</button>
           </Nav>
           <div className="d-flex headerUser-infos mr-3 mb-1">
             <i className="fas fa-user-circle avatar d-none d-lg-block"></i>

@@ -34,7 +34,7 @@ app.use(
       "/api/contact/rdv",
       "/api/comment/add",
       "/api/comment",
-      "/api/comment/:id",
+      /^\/api\/comment\/.*/,
     ],
   })
 );
@@ -181,6 +181,7 @@ app.post("/api/user/delete", (req, res) => {
 });
 
 // --------------- COMMENTS ------------------------
+//get
 app.get("/api/comment", (req, res) => {
   comments.find({}, (err, resp) => {
     if (err) {
@@ -191,6 +192,7 @@ app.get("/api/comment", (req, res) => {
   });
 });
 
+//post
 app.post("/api/comment/add", (req, res) => {
   const { email, username, message, stars, firstname } = req.body;
   if (firstname === "") {
@@ -213,18 +215,14 @@ app.post("/api/comment/add", (req, res) => {
   }
 });
 
+//delete
 app.delete("/api/comment/:id", (req, res) => {
   const id = req.params.id;
-  Member.findByIdAndDelete(id, (err, user) => {
-    if (err || !user) {
-      res.status(400).send({
-        error: true,
-        message: "User not found",
-      });
+  comments.deleteOne({ _id: id }, (err) => {
+    if (err) {
+      res.status(400).send("Error comment not deleted");
     } else {
-      res.status(200).send({
-        user: user,
-      });
+      res.status(200).send("Comment deleted success");
     }
   });
 });

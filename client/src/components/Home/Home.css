@@ -272,10 +272,19 @@
   border-radius: 5px;
 }
 
-.comment i {
+.comment .fa-star {
   color: yellow;
 }
 
-.comment i::before {
-  color: yellow;
+#trash {
+  color: #9688b7;
+  margin-left: 2em;
+}
+
+.form__delete input {
+  border: none;
+  margin-bottom: 1em;
+  padding: 0.2em;
+  border-radius: 5px;
+  outline: none;
 }

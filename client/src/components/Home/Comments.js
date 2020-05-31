@@ -49,7 +49,6 @@ const Comments = () => {
     axios
       .get("http://localhost:8000/api/comment")
       .then((res) => {
-        console.log(res);
         setReviews(res.data);
       })
       .catch((err) => {
@@ -71,7 +70,6 @@ const Comments = () => {
     setAuthor(e.target.value);
   };
   const handleDelete = (e, authorEmail, commentId) => {
-    e.preventDefault();
     if (author === authorEmail) {
       axios
         .delete(`http://localhost:8000/api/comment/${commentId}`)
@@ -92,15 +90,14 @@ const Comments = () => {
       <div>
         <Carousel>
           {reviews.map((review) => {
-            console.log(review._id);
             return (
-              <Carousel.Item>
-                <div key={review.message} className="comment col-md-6">
+              <Carousel.Item key={review.message}>
+                <div className="comment col-md-6">
                   <div>
                     {review.stars} <i className="fas fa-star"></i>
-                    <p onClick={() => setWantDelete(!wantDelete)}>Supprimer</p>
                     {wantDelete && (
                       <form
+                        className="form__delete"
                         onSubmit={(e) =>
                           handleDelete(e, review.email, review._id)
                         }
@@ -118,6 +115,11 @@ const Comments = () => {
                   <p>{review.message}</p>
                   <b>
                     {review.username} <small>le {review.createdAt}</small>
+                    <i
+                      id="trash"
+                      className="fas fa-trash-alt"
+                      onClick={() => setWantDelete(!wantDelete)}
+                    ></i>
                   </b>
                 </div>
               </Carousel.Item>
