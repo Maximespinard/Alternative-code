@@ -8,6 +8,7 @@ const Profile = (props) => {
   const [input, setInput] = useState(user);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     setUser(props.user);
@@ -54,7 +55,7 @@ const Profile = (props) => {
       .then((res) => {
         setSuccess(res.data.response);
         setTimeout(() => {
-          props.history.push("/");
+          props.props.history.push("/");
           setSuccess("");
         }, 4000);
       })
@@ -64,6 +65,11 @@ const Profile = (props) => {
           setError("");
         }, 3000);
       });
+  };
+
+  const handleShowDelete = (e) => {
+    e.preventDefault();
+    setShow(!show);
   };
 
   return (
@@ -88,9 +94,20 @@ const Profile = (props) => {
             placeholder="Email"
           />
           <button onClick={handleUpdate}>Modifer</button>
-          <button onClick={handleDelete}>Supprimer le profile</button>
+          <button onClick={handleShowDelete}>Supprimer le profil</button>
         </form>
       </div>
+      {show ? (
+        <div className="profile_delete">
+          <h3>Êtes vous sûr de vouloir supprimer votre profil ?</h3>
+          <button onClick={handleDelete} className="profile_delete_yes">
+            Oui
+          </button>
+          <button onClick={handleShowDelete} className="profile_delete_no">
+            Annuler
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 };

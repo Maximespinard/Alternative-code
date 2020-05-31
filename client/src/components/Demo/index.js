@@ -52,10 +52,10 @@ const Demo = (props) => {
         <div className="row demo_row1 d-flex justify-content-between  ml-3 mr-3">
           <div className="col-lg-3 demo_col d-flex">
             {showProfile ? (
-              <Profile user={user} handleProfile={handleProfile} />
+              <Profile props={props} user={user} handleProfile={handleProfile} />
             ) : (
               <button onClick={handleProfile}>
-                Modifier votre profile par exemple
+                Modifier votre profil par exemple
               </button>
             )}
           </div>

@@ -152,8 +152,8 @@ app.get("/api/user/:id", (req, res) => {
 
 // route en post pour modifier les données d'un user
 app.post("/api/user/update", (req, res) => {
-  console.log(req.body.username);
-  Users.updateOne(
+  console.log(req.body);
+  Users.findOneAndUpdate(
     { _id: req.body.id },
     { email: req.body.email },
     { username: req.body.username },

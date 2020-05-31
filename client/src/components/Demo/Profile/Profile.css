@@ -2,6 +2,7 @@
     width: 100%;
     height: 30em;
     display: flex;
+    flex-direction: column;
 }
 
 
@@ -52,4 +53,33 @@
     text-align: right;
     margin: 0.5em 0.5em 0 0;
     font-size: 2em;
+    cursor: pointer;
+}
+
+.profile_delete{
+    width: 80%;
+    height: 50vh;
+    background-color: #FEFCF3;
+    margin: 1em auto;
+    border-radius: 10px;
+    padding: 1em 0;
+    margin-bottom: 1em;
+}
+
+.profile_delete h3 {
+   font-size: 1em;
+}
+
+.profile_delete button {
+    font-size: 1em;
+    margin: 1em;
+    
+}
+
+.profile_delete_yes{
+    background-color: rgb(6, 170, 6);
+}
+
+.profile_delete_no{
+    background-color: rgb(212, 31, 31);
 }

@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3em;
+    margin: 2em auto 1em;
 }
 
 .weather input {
@@ -32,9 +32,6 @@
    font-size: 2em;
 }
 
-.weather_result{
-    line-height: 2em;
-}
 
 .weather_p--result{
     font-size: 1.3em;
