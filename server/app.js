@@ -153,16 +153,15 @@ app.get("/api/user/:id", (req, res) => {
 
 // route en post pour modifier les données d'un user
 app.post("/api/user/update", (req, res) => {
-  console.log(req.body);
   Users.findOneAndUpdate(
     { _id: req.body.id },
     { email: req.body.email },
     { username: req.body.username },
     (err) => {
       if (err) {
-        res.status(400).send("shit");
+        res.status(400).send({error: 'Une erreur est survenue'});
       } else {
-        res.status(200).send("send nude");
+        res.status(200);
       }
     }
   );

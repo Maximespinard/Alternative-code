@@ -34,11 +34,9 @@ const Profile = (props) => {
           setSuccess("");
           window.location.reload(false);
         }, 3000);
-        alert("ok");
       })
       .catch((err) => {
-        setError(err);
-        alert("non ok");
+        setError(err.data);
         setTimeout(() => {
           setError("");
         }, 3000);
@@ -72,11 +70,16 @@ const Profile = (props) => {
     setShow(!show);
   };
 
+const successMessage = success !== "" ? <p className="successMessage">{success}</p> : null
+const errorMessage = error !== "" ? <p className="errorMessage">{error}</p> : null
+
   return (
     <div className="profile">
       <div className="profile_form--wrapper">
         <p onClick={props.handleProfile} className="profile_exit">
           <i className="fas fa-times "></i>
+          {successMessage}
+          {errorMessage}
         </p>
         <form className="profile_form">
           <input
