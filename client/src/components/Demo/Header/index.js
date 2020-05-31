@@ -53,16 +53,6 @@ const Header = (props) => {
                 <p className="headerUser_link">Contact</p>
               </Link>
             </Nav.Link>
-            <Nav.Link>
-              <Link
-                to={{
-                  pathname: `/demo/profile?id=${props.user._id}`,
-                  state: props.user,
-                }}
-              >
-                <p className="headerUser_link">Profile</p>
-              </Link>
-            </Nav.Link>
           <button onClick={handleLogout}>Deconnexion</button>
           </Nav>
           <div className="d-flex headerUser-infos mr-3 mb-1">

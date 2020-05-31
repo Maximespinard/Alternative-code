@@ -1,16 +1,46 @@
 .profile {
-    min-height: 100vh;
     width: 100%;
-    background-color: #ffabee
+    height: 20em;
+    display: flex;
 }
 
-.profile h2{
-    padding: 1.5em 0 1em 0;
-}
+
 
 .profile_form--wrapper{
     width: 80%;
-    height: 70vh;
-    background-color: aqua;
+    height: fit-content;
+    background-color: #FEFCF3;
     margin: auto;
+    border-radius: 10px;
+}
+
+.profile_form{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.profile_form input {
+    margin: 0.5em auto;
+    width: 90%;
+    background-color: transparent;
+    border: solid black 1px;
+}
+
+.profile_form input:focus {
+   outline: none;
+   
+}
+
+.profile_form input:-webkit-autofill {
+    outline: none;
+    -webkit-box-shadow: 0 0 0 1000px #FEFCF3 inset;
+    
+ }
+
+.profile_form button{
+    font-size: 1em;
 }

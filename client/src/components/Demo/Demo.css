@@ -8,8 +8,9 @@
 
 */
 
+
 .demo {
-  width: 100%;
+  width: 102.5vw;
   min-height: 84.5vh;
   background-color: #ebe7d7;
 }
@@ -23,6 +24,9 @@
 }
 
 .demo_col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(11, 37, 64, 1);
   height: 25em;
   margin: 2em 0em;
@@ -40,6 +44,7 @@
   transition: 1s;
   border: none;
   border-radius: 5px;
+  height: fit-content;
 }
 
 .demo button:hover {

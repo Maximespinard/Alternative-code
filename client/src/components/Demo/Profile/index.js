@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 import "./Profile.css";
 
 const Profile = (props) => {
   const [user, setUser] = useState({});
   const [input, setInput] = useState(user);
-  const [success, setSuccess] = useState('');
-  const [error, setError] = useState('');
-
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    setUser(props.location.state);
-    setInput(props.location.state);
+    setUser(props.user);
+    setInput(props.user);
   }, []);
 
   const handleChange = (e) => {
@@ -20,54 +19,55 @@ const Profile = (props) => {
   };
 
   const handleUpdate = (e) => {
-      const {_id, username, email} = input
-    e.preventDefault()
-    axios.post('http://localhost:8000/api/user/update', {
-        id : _id,
+    const { _id, username, email } = input;
+    e.preventDefault();
+    axios
+      .post("http://localhost:8000/api/user/update", {
+        id: _id,
         username,
-        email
-    })
-    .then((res) => {
-        setSuccess(res.data.response)
+        email,
+      })
+      .then((res) => {
+        setSuccess(res.data.response);
         setTimeout(() => {
-            setSuccess('')
-            props.history.push('/demo')
-        }, 3000)
-        alert('ok')
-    })
-    .catch((err) => {
-        setError(err)
-        alert('non ok')
+          setSuccess("");
+          window.location.reload(false);
+        }, 3000);
+        alert("ok");
+      })
+      .catch((err) => {
+        setError(err);
+        alert("non ok");
         setTimeout(() => {
-            setError('')
-        }, 3000)
-    })
-  }
+          setError("");
+        }, 3000);
+      });
+  };
 
   const handleDelete = (e) => {
-    e.preventDefault()
-    const {_id} = input
-    axios.post('http://localhost:8000/api/user/delete', {
-        id: _id
-    })
-    .then((res) => {
-        setSuccess(res.data.response)
+    e.preventDefault();
+    const { _id } = input;
+    axios
+      .post("http://localhost:8000/api/user/delete", {
+        id: _id,
+      })
+      .then((res) => {
+        setSuccess(res.data.response);
         setTimeout(() => {
-            props.history.push('/')
-            setSuccess('')
-        }, 4000)
-    })
-    .catch((err) => {
-        setError(err)
+          props.history.push("/");
+          setSuccess("");
+        }, 4000);
+      })
+      .catch((err) => {
+        setError(err);
         setTimeout(() => {
-            setError('')
-        }, 3000)
-    })
-  }
+          setError("");
+        }, 3000);
+      });
+  };
 
   return (
     <div className="profile">
-      <h2>Modifier votre profile</h2>
       <div className="profile_form--wrapper">
         <form className="profile_form">
           <input
