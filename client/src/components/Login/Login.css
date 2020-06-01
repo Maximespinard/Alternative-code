@@ -21,8 +21,8 @@
 }
 
 .login-wrapper {
-  width: 90%;
-  height: 70%;
+  width: 100%;
+  height: 100%;
   background-color: rgba(58, 65, 65, 0.8);
   flex-direction: column;
   justify-content: center;
@@ -75,8 +75,10 @@
   border-radius: 50%;
   height: 1em;
   width: 1em;
-  margin: 0 0 2em 1em;
-  font-size: 1.5em;
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  font-size: 2em;
 }
 
 .icon__login:hover {
@@ -88,6 +90,7 @@
 @media screen and (min-width: 650px){
   .login-wrapper{
     width: 60%;
+    height: 80%;
   }
   .login_input{
     width: 70%;
