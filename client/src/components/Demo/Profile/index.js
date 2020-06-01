@@ -23,7 +23,7 @@ const Profile = (props) => {
     const { _id, username, email } = input;
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/user/update", {
+      .put("http://localhost:8000/api/user/update", {
         id: _id,
         username,
         email,

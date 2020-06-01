@@ -152,14 +152,13 @@ app.get("/api/user/:id", (req, res) => {
 });
 
 // route en post pour modifier les données d'un user
-app.post("/api/user/update", (req, res) => {
+app.put("/api/user/update", (req, res) => {
   Users.findOneAndUpdate(
     { _id: req.body.id },
-    { email: req.body.email },
-    { username: req.body.username },
+    { email: req.body.email, username: req.body.username },
     (err) => {
       if (err) {
-        res.status(400).send({error: 'Une erreur est survenue'});
+        res.status(400).send(err);
       } else {
         res.status(200);
       }
@@ -170,11 +169,13 @@ app.post("/api/user/update", (req, res) => {
 // route en post pour delete un user
 app.post("/api/user/delete", (req, res) => {
   const { id } = req.body;
-  Users.deleteOne({_id: id}, (err) => {
+  Users.deleteOne({ _id: id }, (err) => {
     if (err) {
-      res.status(400).send({error: 'Une erreur est survenue'})
+      res.status(400).send({ error: "Une erreur est survenue" });
     } else {
-      res.status(200).send({response: 'Votre compte a bien été supprimé, vous allez être redirigé'})
+      res.status(200).send({
+        response: "Votre compte a bien été supprimé, vous allez être redirigé",
+      });
     }
   });
 });
