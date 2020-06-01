@@ -1,6 +1,5 @@
 .profile {
     width: 100%;
-    height: 30em;
     display: flex;
     flex-direction: column;
 }
@@ -8,10 +7,10 @@
 
 
 .profile_form--wrapper{
-    width: 80%;
+    width: 90%;
     height: 20em;
     background-color: #FEFCF3;
-    margin: auto;
+    margin: 0 auto;
     border-radius: 10px;
     
 }
@@ -58,7 +57,7 @@
 
 .profile_delete{
     width: 80%;
-    height: 50vh;
+    height: 30%;
     background-color: #FEFCF3;
     margin: 1em auto;
     border-radius: 10px;
@@ -75,6 +74,26 @@
     margin: 1em;
     
 }
+
+.sucessMessage {
+    margin: 0 auto;
+    padding: 0.5em;
+    color: yellowgreen;
+    font-size: 1em;
+    border: solid 2px yellowgreen;
+    width: fit-content;
+    text-align: center;
+  }
+  
+  .errorMessage {
+    margin: 0 auto;
+    padding: 0.5em;
+    color: red;
+    font-size: 1em;
+    border: solid 2px red;
+    width: fit-content;
+    text-align: center;
+  }
 
 .profile_delete_yes{
     background-color: rgb(6, 170, 6);
