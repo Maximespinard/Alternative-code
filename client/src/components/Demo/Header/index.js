@@ -28,7 +28,7 @@ const Header = (props) => {
   };
   return (
     <div>
-      <Navbar className="headerUser row" expand="lg">
+      <Navbar className="headerUser " expand="lg">
         <Navbar.Brand>
           <Link to="/demo">
             <img src={logo} alt="alternative-code" />
