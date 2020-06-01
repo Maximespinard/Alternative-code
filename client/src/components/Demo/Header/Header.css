@@ -1,5 +1,5 @@
 .headerUser {
-  height: fit-content;
+  min-height: 10vh;
   background-color: #fefcf3;
 }
 
@@ -92,4 +92,14 @@
     margin-right: 2em;
   }
   
+}
+
+@media screen and (max-width: 336px){
+  .headerUser-infos i {
+    display: none;
+  }
+
+  .headerUser-infos p {
+    display: none;
+  }
 }

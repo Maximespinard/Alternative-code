@@ -28,7 +28,7 @@ const Header = (props) => {
   };
   return (
     <div>
-      <Navbar className="headerUser " expand="lg">
+      <Navbar className="headerUser fixed-top" fixed-top expand="lg">
         <Navbar.Brand>
           <Link to="/demo">
             <img src={logo} alt="alternative-code" />
@@ -55,7 +55,7 @@ const Header = (props) => {
             </Nav.Link>
             <button onClick={handleLogout}>Deconnexion</button>
           </Nav>
-          <div className="d-flex headerUser-infos mr-3 mb-1">
+          <div className="d-flex headerUser-infos mr-3 mb-1 ">
             <i className="fas fa-user-circle avatar d-none d-lg-block"></i>
             <p className="headerUser_p d-none d-lg-block">
               {props.user.username}
