@@ -24,7 +24,9 @@ const Menu = (props) => {
           </Nav.Link>
           <Nav.Link>
             <Scroll to="about" smooth={true} duration={2000}>
-              <p>About</p>
+              <Link to="/">
+                <p>About</p>
+              </Link>
             </Scroll>
           </Nav.Link>
           <Nav.Link>
