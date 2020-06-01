@@ -18,9 +18,11 @@ const Menu = (props) => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Link>
-            <Link to="/">
-              <p>Home</p>
-            </Link>
+            <Scroll to="home" smooth={true} duration={2000}>
+              <Link to="/">
+                <p>Home</p>
+              </Link>
+            </Scroll>
           </Nav.Link>
           <Nav.Link>
             <Scroll to="about" smooth={true} duration={2000}>

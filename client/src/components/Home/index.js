@@ -6,7 +6,7 @@ import Comments from "./Comments";
 
 const Home = (props) => {
   return (
-    <div>
+    <div className="home">
       <Header props={props} />
       <About />
       <Comments />
