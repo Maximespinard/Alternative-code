@@ -77,16 +77,13 @@
   margin: 0.5em 0.5em 0 0;
   display: flex;
   align-items: center;
-  position: relative;
-  bottom: .3em;
-}
-.headerUser-infos i{
-  font-size: 2.5em;
-  color:  #fefcf3;
 }
 
-.headerUser-infos_userAvatar{
+
+.headerUser-infos div{
   border-radius: 50%;
+  width: 4em;
+  height: 4em;
 }
 
 .headerUser button {

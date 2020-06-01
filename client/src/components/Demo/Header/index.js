@@ -64,14 +64,13 @@ const Header = (props) => {
           </Nav>
           <div className="d-flex headerUser-infos mr-3 mb-1 ">
             {avatar !== "null" ? (
-              <i
-                className="far fa-circle headerUser-infos_userAvatar"
+              <div
                 style={{
                   backgroundImage: `url(${props.user.avatar})`,
-                  backgroundPosition: "center",
                   backgroundSize: "cover",
+                  backgroundPosition: "center",
                 }}
-              ></i>
+              ></div>
             ) : (
               <i className="fas fa-user-circle avatar d-none d-lg-block"></i>
             )}

@@ -25,7 +25,7 @@ const Upload = (props) => {
             setTimeout(() => {
               setSuccess("");
               window.location.reload(false);
-            }, 3000);
+            }, 1500);
           });
       })
 
