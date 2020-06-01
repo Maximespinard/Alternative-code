@@ -14,6 +14,12 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-wrapper {
   width: 90%;
   height: 70%;
@@ -21,6 +27,8 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .login h2 {
@@ -29,14 +37,10 @@
   font-size: 2.5em;
 }
 
-.login form {
-  margin: 0 auto;
-}
-
 .login_input {
   margin: 1em auto;
   height: 3em;
-  width: 100%;
+  width: 90%;
   border-radius: 10px;
   border: none;
   background-color: #fefcf3;
@@ -47,7 +51,7 @@
 .login_button {
   margin: 1em auto;
   height: 3em;
-  width: 100%;
+  width: 90%;
   border-radius: 10px;
   border: none;
   background-color: #9e9d9a;
@@ -71,10 +75,36 @@
   border-radius: 50%;
   height: 1em;
   width: 1em;
+  margin: 0 0 2em 1em;
+  font-size: 1.5em;
 }
 
 .icon__login:hover {
   text-decoration: none;
   color: #476798;
   background-color: white;
+}
+
+@media screen and (min-width: 650px){
+  .login-wrapper{
+    width: 60%;
+  }
+  .login_input{
+    width: 70%;
+  } 
+  .login_button{
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .login-wrapper{
+    width: 50%;
+  }
+  .login_input{
+    width: 70%;
+  } 
+  .login_button{
+    width: 70%;
+  }
 }

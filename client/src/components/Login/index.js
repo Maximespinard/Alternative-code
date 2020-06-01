@@ -42,8 +42,8 @@ const Login = (props) => {
     error !== "" ? <p className="errorMessage">{error}</p> : null;
 
   return (
-    <div className="login d-flex justify-content-center align-items-center">
-      <div className="login-wrapper d-flex col-md-5">
+    <div className="login ">
+      <div className="login-wrapper ">
         <i
           onClick={() => props.history.push("/")}
           className="icon__login fas fa-times "
@@ -51,7 +51,7 @@ const Login = (props) => {
         <h2>Connexion</h2>
         {errorMessage}
         <div>
-          <form onSubmit={handleSubmit} className="d-flex flex-column col-8">
+          <form onSubmit={handleSubmit} className="">
             <input
               name="email"
               value={input.email}
