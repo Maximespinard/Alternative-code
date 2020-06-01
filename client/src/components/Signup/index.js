@@ -55,12 +55,11 @@ const Signup = (props) => {
             props.history.push("/login");
           }, 3000);
         })
-        .catch((err) => {
-          console.log(err);
-          setError("Une erreur s'est produite");
+        .catch(() => {
+          setError("L'email adresse ou l'identifiant est déjà utilisé ");
           setTimeout(() => {
             setError("");
-          }, 3000);
+          }, 4000);
         });
     } else {
       setPasswordValid(false);

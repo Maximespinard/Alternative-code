@@ -31,10 +31,11 @@ const Login = (props) => {
         localStorage.setItem("token", res.data.token);
         props.history.push(`/demo?id=${res.data.id}`);
       })
-      .catch((err) => {
+      .catch(() => {
+        setError("L'email adresse ou le mot de passe est invalide")
         setTimeout(() => {
           setError("");
-        }, 3000);
+        }, 4000);
       });
   };
 
