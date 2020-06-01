@@ -42,7 +42,7 @@ const RendezVous = (props) => {
       <p onClick={() => props.setRdv(false)}>
         Retourner au formulaire de contact
       </p>
-      <form onSubmit={handleSubmit} className="col-md-5">
+      <form onSubmit={handleSubmit} className="col-md-10">
         <h3>Prenez un rendez-vous téléphonique avec un conseillé</h3>
         {success && (
           <h3 className="success">Votre rendez-vous à bien été pris</h3>

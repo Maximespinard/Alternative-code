@@ -6,6 +6,7 @@ import "./Login.css";
 const Login = (props) => {
   let userData = {
     email: "",
+    firstname: "",
     password: "",
   };
 
@@ -21,22 +22,27 @@ const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { email, password } = input;
-    axios
-      .post("http://localhost:8000/api/auth", {
-        email,
-        password,
-      })
-      .then((res) => {
-        localStorage.setItem("token", res.data.token);
-        props.history.push(`/demo?id=${res.data.id}`);
-      })
-      .catch(() => {
-        setError("L'email adresse ou le mot de passe est invalide")
-        setTimeout(() => {
-          setError("");
-        }, 4000);
-      });
+    if (input.firstname === "") {
+      const { email, password, firstname } = input;
+      axios
+        .post("http://localhost:8000/api/auth", {
+          email,
+          firstname,
+          password,
+        })
+        .then((res) => {
+          localStorage.setItem("token", res.data.token);
+          props.history.push(`/demo?id=${res.data.id}`);
+        })
+        .catch(() => {
+          setError("L'email adresse ou le mot de passe est invalide");
+          setTimeout(() => {
+            setError("");
+          }, 4000);
+        });
+    } else {
+      props.history.push("/");
+    }
   };
 
   const errorMessage =
@@ -60,6 +66,13 @@ const Login = (props) => {
               placeholder="Email"
               className="login_input"
               type="text"
+            />
+            <input
+              className="d-none"
+              onChange={handleChange}
+              type="firstname"
+              name="firstname"
+              placeholder="Votre email"
             />
             <input
               name="password"
