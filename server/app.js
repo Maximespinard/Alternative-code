@@ -93,51 +93,59 @@ const comments = mongoose.model("comments", comment);
 
 // route en post pour créer un user
 app.post("/api/user/add", (req, res) => {
-  const { email, username, password } = req.body;
-  const user = new Users({
-    email,
-    username,
-    password: bcrypt.hashSync(password, 10),
-  });
+  const { email, firstname, username, password } = req.body;
+  if (firstname === "") {
+    const user = new Users({
+      email,
+      username,
+      password: bcrypt.hashSync(password, 10),
+    });
 
-  user.save((err, resp) => {
-    if (err) {
-      res.status(400).send("PROBLEME");
-    } else {
-      res.status(200).send({ response: "Votre compte a bien été créé " });
-    }
-  });
+    user.save((err, resp) => {
+      if (err) {
+        res.status(400).send("PROBLEME");
+      } else {
+        res.status(200).send({ response: "Votre compte a bien été créé " });
+      }
+    });
+  } else {
+    res.status(401);
+  }
 });
 
 // route en post pour login
 app.post("/api/auth", (req, res) => {
-  const { email, password } = req.body;
-  Users.findOne({ email }, (err, user) => {
-    if (err) {
-      res.status(500).send({ error: ` Une erreur est survenue ${err}` });
-    }
-    if (!user) {
-      res
-        .status(501)
-        .send({ error: `Aucun compte n'existe avec cette adresse email` });
-    } else {
-      const hash = user.password;
-      bcrypt.compare(password, hash, (err, result) => {
-        if (result === true) {
-          const myToken = jwt.sign(
-            {
-              iss: "alternative-code.com",
-              user,
-            },
-            secret
-          );
-          res.status(200).send({ token: myToken, id: user._id });
-        } else {
-          res.status(500).send({ error: "Mot de passe incorrect" });
-        }
-      });
-    }
-  });
+  const { email, firstname, password } = req.body;
+  if (firstname === "") {
+    Users.findOne({ email }, (err, user) => {
+      if (err) {
+        res.status(500).send({ error: ` Une erreur est survenue ${err}` });
+      }
+      if (!user) {
+        res
+          .status(501)
+          .send({ error: `Aucun compte n'existe avec cette adresse email` });
+      } else {
+        const hash = user.password;
+        bcrypt.compare(password, hash, (err, result) => {
+          if (result === true) {
+            const myToken = jwt.sign(
+              {
+                iss: "alternative-code.com",
+                user,
+              },
+              secret
+            );
+            res.status(200).send({ token: myToken, id: user._id });
+          } else {
+            res.status(500).send({ error: "Mot de passe incorrect" });
+          }
+        });
+      }
+    });
+  } else {
+    res.status(401);
+  }
 });
 
 // route en get pour récuperer l'user connecté
@@ -160,7 +168,7 @@ app.put("/api/user/update", (req, res) => {
       if (err) {
         res.status(400).send(err);
       } else {
-        res.status(200).send({response: 'Modifications prises en compte'});
+        res.status(200).send({ response: "Modifications prises en compte" });
       }
     }
   );

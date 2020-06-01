@@ -5,6 +5,7 @@ import "./Signup.css";
 const Signup = (props) => {
   let userData = {
     email: "",
+    firtname: "",
     username: "",
     password: "",
   };
@@ -39,31 +40,36 @@ const Signup = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { email, username, password } = input;
-    if (passwordValid) {
-      axios
-        .post("http://localhost:8000/api/user/add", {
-          email,
-          username,
-          password,
-        })
-        .then((res) => {
-          setError("");
-          setSuccess(res.data.response);
-          setTimeout(() => {
-            setSuccess("");
-            props.history.push("/login");
-          }, 3000);
-        })
-        .catch(() => {
-          setError("L'email adresse ou l'identifiant est déjà utilisé ");
-          setTimeout(() => {
+    if (input.firstname === "") {
+      const { email, username, firtname, password } = input;
+      if (passwordValid) {
+        axios
+          .post("http://localhost:8000/api/user/add", {
+            email,
+            firtname,
+            username,
+            password,
+          })
+          .then((res) => {
             setError("");
-          }, 4000);
-        });
+            setSuccess(res.data.response);
+            setTimeout(() => {
+              setSuccess("");
+              props.history.push("/login");
+            }, 3000);
+          })
+          .catch(() => {
+            setError("L'email adresse ou l'identifiant est déjà utilisé ");
+            setTimeout(() => {
+              setError("");
+            }, 4000);
+          });
+      } else {
+        setPasswordValid(false);
+        setError("Eh Oh check ton mot de passe!");
+      }
     } else {
-      setPasswordValid(false);
-      setError("Eh Oh check ton mot de passe!");
+      props.history.push("/");
     }
   };
 
@@ -102,7 +108,13 @@ const Signup = (props) => {
               placeholder="Nom d'utilisateur"
               className="signup_input"
             />
-
+            <input
+              className="d-none"
+              onChange={handleChange}
+              type="firstname"
+              name="firstname"
+              placeholder="Votre email"
+            />
             <input
               required
               className="signup_input"
