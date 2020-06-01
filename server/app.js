@@ -11,6 +11,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const expressJwt = require("express-jwt");
 const nodemailer = require("nodemailer");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 let date = new Date();
 
 // connexion à la bdd
@@ -35,6 +37,7 @@ app.use(
       "/api/comment/add",
       "/api/comment",
       /^\/api\/comment\/.*/,
+      "/api/upload",
     ],
   })
 );
@@ -50,6 +53,9 @@ const usersSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+    },
+    avatar: {
+      type: String,
     },
     password: {
       type: String,
@@ -99,6 +105,7 @@ app.post("/api/user/add", (req, res) => {
       email,
       username,
       password: bcrypt.hashSync(password, 10),
+      avatar: "",
     });
 
     user.save((err, resp) => {
@@ -299,6 +306,20 @@ app.post("/api/contact/rdv", (req, res) => {
   res.status(200).send({
     response: "Rendez-vous validé",
   });
+});
+
+app.put("/api/upload", (req, res) => {
+  const { id, avatar } = req.body;
+  console.log("ok")
+  Users.findOneAndUpdate({_id: id}, {avatar: avatar},
+    (err) => {
+      if (err) {
+        res.status(400)
+      } else {
+        res.status(200).send({response: "Avatar bien enregistrer"})
+      }
+    }
+    )
 });
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));

@@ -7,11 +7,13 @@ import Footer from "../Footer";
 import Header from "./Header";
 import Profile from "./Profile";
 import Weather from "./Weather";
+import Upload from "./Upload";
 
 const Demo = (props) => {
   const [user, setUser] = useState([]);
   const [showProfile, setShowProfile] = useState(false);
   const [showWeather, setshowWeather] = useState(false);
+  const [showUpload, setShowUpload] = useState(false);
 
   const parse = queryString.parse(props.location.search);
   const id = parse.id;
@@ -43,6 +45,10 @@ const Demo = (props) => {
     setshowWeather(!showWeather);
   };
 
+  const handleUpload = () => {
+    setShowUpload(!showUpload);
+  };
+
   return (
     <div className="demo-wrapper">
       <Header props={props} user={user} />
@@ -70,7 +76,11 @@ const Demo = (props) => {
             )}
           </div>
           <div className="col-lg-3 demo_col d-flex">
-            <button>Et la une troisième</button>
+            {showUpload ? (
+              <Upload id={user._id} handleUpload={handleUpload} />
+            ) : (
+              <button onClick={handleUpload}>Choisir sa photo de profil</button>
+            )}
           </div>
         </div>
       </div>

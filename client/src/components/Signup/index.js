@@ -5,7 +5,7 @@ import "./Signup.css";
 const Signup = (props) => {
   let userData = {
     email: "",
-    firtname: "",
+    firstname: "",
     username: "",
     password: "",
   };
@@ -41,12 +41,12 @@ const Signup = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.firstname === "") {
-      const { email, username, firtname, password } = input;
+      const { email, username, firstname, password } = input;
       if (passwordValid) {
         axios
           .post("http://localhost:8000/api/user/add", {
             email,
-            firtname,
+            firstname,
             username,
             password,
           })
