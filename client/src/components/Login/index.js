@@ -51,7 +51,7 @@ const Login = (props) => {
         <h2>Connexion</h2>
         {errorMessage}
         <div>
-          <form onSubmit={handleSubmit} className="">
+          <form onSubmit={handleSubmit}>
             <input
               name="email"
               value={input.email}
