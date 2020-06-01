@@ -45,20 +45,19 @@ const Contact = () => {
     <Fragment>
       <Menu />
       <div className="contact__wrapper">
-        <div className="contact__infos d-md-flex">
-          <div className="col-md-3">
+        <div className="contact__infos ">
+          <div>
             <a href="mailto:contact@alternative-code.com">
               contact@alternative-code.com
             </a>
             <i className="far fa-envelope"></i>
           </div>
-          <div className="col-md-3">
+          <div>
             06 49 79 96 76 <i className="fas fa-phone"></i>
           </div>
           <div
             style={{ cursor: "pointer" }}
             onClick={() => setRdv(!rdv)}
-            className="col-md-3"
           >
             Prendre un rendez-vous <i className="far fa-calendar-alt"></i>
           </div>
