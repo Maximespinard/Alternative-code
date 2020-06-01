@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import logo from "../../../assets/images/alternative.png";
 import "./Header.css";
 
 const Header = (props) => {
   const [show, setShow] = useState(false);
+  const [avatar, setAvatar] = useState(undefined);
 
+  useEffect(() => {
+    setAvatar(props.user.avatar);
+  });
   const handleClick = () => {
     if (show === false) {
       setShow(true);
@@ -22,6 +27,8 @@ const Header = (props) => {
     }
   };
 
+  console.log(props.user.avatar);
+
   const handleLogout = () => {
     localStorage.clear();
     props.props.history.push("/");
@@ -34,9 +41,9 @@ const Header = (props) => {
             <img src={logo} alt="alternative-code" />
           </Link>
         </Navbar.Brand>
+
         <div className="d-flex">
           <div onClick={handleClick} className="d-flex headerUser-infos">
-            <i className="fas fa-user-circle avatar d-lg-none "></i>
             <p className="headerUser_p d-lg-none ">{props.user.username}</p>
           </div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -56,7 +63,12 @@ const Header = (props) => {
             <button onClick={handleLogout}>Deconnexion</button>
           </Nav>
           <div className="d-flex headerUser-infos mr-3 mb-1 ">
-            <i className="fas fa-user-circle avatar d-none d-lg-block"></i>
+            {avatar !== "null" ? (
+              <img alt="avatar" src={props.user.avatar} />
+            ) : (
+              <i className="fas fa-user-circle avatar d-none d-lg-block"></i>
+            )}
+
             <p className="headerUser_p d-none d-lg-block">
               {props.user.username}
             </p>

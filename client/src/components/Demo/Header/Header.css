@@ -75,6 +75,10 @@
   margin: 0.5em 0.5em 0 0;
 }
 
+.headerUser-infos img{
+  width: 5em;
+}
+
 .headerUser button {
   width: fit-content;
   margin: 0.5em auto;

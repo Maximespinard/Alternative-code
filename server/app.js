@@ -105,7 +105,7 @@ app.post("/api/user/add", (req, res) => {
       email,
       username,
       password: bcrypt.hashSync(password, 10),
-      avatar: "",
+      avatar: "null",
     });
 
     user.save((err, resp) => {
@@ -310,7 +310,6 @@ app.post("/api/contact/rdv", (req, res) => {
 
 app.put("/api/upload", (req, res) => {
   const { id, avatar } = req.body;
-  console.log("ok")
   Users.findOneAndUpdate({_id: id}, {avatar: avatar},
     (err) => {
       if (err) {
