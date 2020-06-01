@@ -61,6 +61,8 @@
   width: 100%;
 }
 
+
+
 .avatar {
   font-size: 2.2em !important;
 }
@@ -73,10 +75,18 @@
 
 .headerUser-infos{
   margin: 0.5em 0.5em 0 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  bottom: .3em;
+}
+.headerUser-infos i{
+  font-size: 2.5em;
+  color:  #fefcf3;
 }
 
-.headerUser-infos img{
-  width: 5em;
+.headerUser-infos_userAvatar{
+  border-radius: 50%;
 }
 
 .headerUser button {
