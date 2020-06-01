@@ -4,10 +4,10 @@ import About from "./About";
 import "./Home.css";
 import Comments from "./Comments";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div>
-      <Header />
+      <Header props={props} />
       <About />
       <Comments />
     </div>
