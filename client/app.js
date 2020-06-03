@@ -1,7 +1,7 @@
 // imports and consts
 const express = require("express");
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -17,7 +17,10 @@ let date = new Date();
 
 // connexion à la bdd
 mongoose
-  .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGODB_URI || DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("successfully connected db"));
 
 // middleware
@@ -41,6 +44,10 @@ app.use(
     ],
   })
 );
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 const usersSchema = new Schema(
   {
