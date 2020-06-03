@@ -19,7 +19,7 @@
     "typewriter-effect": "^2.13.1",
     "weather-js": "^2.0.0"
   },
-  "homepage": "https://Maximespinard.github.io/Alternative-code",
+  "homepage": "https://github.com/Maximespinard/Alternative-code",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
