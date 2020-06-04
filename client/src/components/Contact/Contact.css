@@ -1,10 +1,9 @@
 .contact__wrapper {
-  height: auto;
+  height: 83vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 1em;
 }
 
 .contact__infos {
