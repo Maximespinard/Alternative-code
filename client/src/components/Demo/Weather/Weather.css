@@ -42,8 +42,9 @@
 }
 
 .weather_exit{
-    text-align: right;
-    margin: 1em;
+    width: fit-content;
+    position: relative;
+    bottom: 1.5em;
 }
 
 

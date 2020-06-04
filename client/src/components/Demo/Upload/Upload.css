@@ -1,22 +1,22 @@
 .upload input {
   font-size: 0.7em;
+  margin-top: 2em;
 }
 
-.upload{
-    width: 90%;
-    height: 80%;
-    
+.upload {
+  width: 90%;
+  height: 80%;
 }
 
 .upload_exit i {
   cursor: pointer;
   font-size: 2em;
-  margin-top: .7em;
+  position: relative;
+  bottom: .8em;
 }
-.upload_exit  {
-    text-align: right;
-  }
-  
+.upload_exit {
+  width: fit-content;
+}
 
 @media screen and (min-width: 1330px) {
   .upload input {
