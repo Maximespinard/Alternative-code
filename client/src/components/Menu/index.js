@@ -33,7 +33,7 @@ const Menu = (props) => {
           </Nav.Link>
           <Nav.Link>
             <Link to="/login">
-              <p>Démo</p>
+              <p>Demo</p>
             </Link>
           </Nav.Link>
           <Nav.Link>

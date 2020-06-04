@@ -64,16 +64,21 @@
 }
 
 .icon__login {
-  color: white;
-  cursor: pointer;
-  background-color: #476798;
-  border-radius: 50%;
-  height: 1em;
-  width: 1em;
   position: fixed;
-  top: 1em;
-  left: 1em;
-  font-size: 2em;
+  top: 5%;
+  left: 5%;
+  background-color: #fefcf3;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.icon__login i {
+  font-size: 1.4em;
 }
 
 .icon__login:hover {

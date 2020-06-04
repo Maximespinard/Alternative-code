@@ -51,10 +51,13 @@ const Login = (props) => {
   return (
     <div className="login ">
       <div className="login-wrapper ">
-        <i
-          onClick={() => props.history.push("/")}
-          className="icon__login fas fa-times "
-        ></i>
+        <div className="icon__login">
+          <i
+            onClick={() => props.history.push("/")}
+            className=" fas fa-times "
+          ></i>
+        </div>
+
         <h2>Connexion</h2>
         {errorMessage}
         <div>
