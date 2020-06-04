@@ -78,9 +78,9 @@ const errorMessage = error !== "" ? <p className="errorMessage">{error}</p> : nu
       <div className="profile_form--wrapper">
         <p onClick={props.handleProfile} className="profile_exit">
           <i className="fas fa-times "></i>
+        </p>
           {successMessage}
           {errorMessage}
-        </p>
         <form className="profile_form">
           <input
             type="text"

@@ -32,11 +32,12 @@
   align-items: center;
   justify-content: center;
   background-color: #FEFCF3;
-  min-height: 25em;
+  min-height: 20em;
   margin: 2em auto;
   border-radius: 20px;
   padding: 2em 0;
   width: 80%;
+  border: solid 2px rgb(105, 108, 112)
 }
 
 .demo_col:hover {
