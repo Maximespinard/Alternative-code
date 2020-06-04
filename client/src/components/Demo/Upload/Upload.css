@@ -2,3 +2,10 @@
     font-size: .7em;
     
 }
+
+@media screen and (min-width: 1330px){
+    .upload input {
+        font-size: 1em;
+        
+    }
+}

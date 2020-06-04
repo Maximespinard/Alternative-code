@@ -44,7 +44,7 @@ const Header = (props) => {
 
         <div className="d-flex">
           <div onClick={handleClick} className="d-flex headerUser-infos">
-            <p className="headerUser_p d-lg-none ">{props.user.username}</p>
+          
           </div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </div>
@@ -64,7 +64,7 @@ const Header = (props) => {
           </Nav>
           <div className="d-flex headerUser-infos mr-3 mb-1 ">
             {avatar !== "null" ? (
-              <div
+              <div className=" d-none d-lg-block"
                 style={{
                   backgroundImage: `url(${props.user.avatar})`,
                   backgroundSize: "cover",
