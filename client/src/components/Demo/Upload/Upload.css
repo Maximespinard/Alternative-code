@@ -1,11 +1,25 @@
 .upload input {
-    font-size: .7em;
+  font-size: 0.7em;
+}
+
+.upload{
+    width: 90%;
+    height: 80%;
     
 }
 
-@media screen and (min-width: 1330px){
-    .upload input {
-        font-size: 1em;
-        
-    }
+.upload_exit i {
+  cursor: pointer;
+  font-size: 2em;
+  margin-top: .7em;
+}
+.upload_exit  {
+    text-align: right;
+  }
+  
+
+@media screen and (min-width: 1330px) {
+  .upload input {
+    font-size: 1em;
+  }
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import loader from "../../../assets/images/loader.gif";
 
-import './Upload.css'
+import "./Upload.css";
 
 const Upload = (props) => {
   const [loading, setLoading] = useState(false);
@@ -39,6 +39,9 @@ const Upload = (props) => {
     loading !== false ? <p className="loadingMessage">{loading}</p> : null;
   return (
     <div className="upload">
+      <p onClick={props.handleUpload} className="upload_exit">
+        <i className="fas fa-times "></i>
+      </p>
       {successMessage}
       <form>
         <input onChange={handleUpload} type="file" title="foo" name="file" />
