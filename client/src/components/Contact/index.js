@@ -24,7 +24,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/contact", {
+      .post("https://alternative-code.herokuapp.com/api/contact", {
         name: form.name,
         email: form.email,
         message: form.message,

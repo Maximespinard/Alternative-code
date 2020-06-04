@@ -26,7 +26,7 @@ const Comments = () => {
   const handleSubmit = (e) => {
     if (form.firstname === "") {
       axios
-        .post("http://localhost:8000/api/comment/add", {
+        .post("https://alternative-code.herokuapp.com/api/comment/add", {
           email: form.email,
           username: form.username,
           message: form.message,
@@ -47,7 +47,7 @@ const Comments = () => {
   //récupération des commentaires en bdd
   useLayoutEffect(() => {
     axios
-      .get("http://localhost:8000/api/comment")
+      .get("https://alternative-code.herokuapp.com/api/comment")
       .then((res) => {
         setReviews(res.data);
       })
@@ -72,7 +72,7 @@ const Comments = () => {
   const handleDelete = (e, authorEmail, commentId) => {
     if (author === authorEmail) {
       axios
-        .delete(`http://localhost:8000/api/comment/${commentId}`)
+        .delete(`https://alternative-code.herokuapp.com/comment/${commentId}`)
         .then((res) => {
           console.log("COOOOOOLLLL");
         })

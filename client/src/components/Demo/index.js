@@ -25,7 +25,7 @@ const Demo = (props) => {
   useLayoutEffect(() => {
     const getCurrentUser = async () => {
       await axios
-        .get(`http://localhost:8000/api/user/${id}`, config)
+        .get(`https://alternative-code.herokuapp.com/api/user/${id}`, config)
         .then((res) => {
           setUser(res.data.response);
         })

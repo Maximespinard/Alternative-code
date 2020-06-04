@@ -21,7 +21,7 @@ const RendezVous = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/contact/rdv", {
+      .post("https://alternative-code.herokuapp.com/api/contact/rdv", {
         name: form.name,
         number: form.number,
         datetime: form.datetime,
