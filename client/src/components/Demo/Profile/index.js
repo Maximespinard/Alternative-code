@@ -23,7 +23,7 @@ const Profile = (props) => {
     const { _id, username, email } = input;
     e.preventDefault();
     axios
-      .put("http://localhost:8000/api/user/update", {
+      .put("https://alternative-code.herokuapp.com/api/user/update", {
         id: _id,
         username,
         email,
@@ -47,7 +47,7 @@ const Profile = (props) => {
     e.preventDefault();
     const { _id } = input;
     axios
-      .post("http://localhost:8000/api/user/delete", {
+      .post("https://alternative-code.herokuapp.com/api/user/delete", {
         id: _id,
       })
       .then((res) => {
@@ -70,8 +70,10 @@ const Profile = (props) => {
     setShow(!show);
   };
 
-const successMessage = success !== "" ? <p className="successMessage">{success}</p> : null
-const errorMessage = error !== "" ? <p className="errorMessage">{error}</p> : null
+  const successMessage =
+    success !== "" ? <p className="successMessage">{success}</p> : null;
+  const errorMessage =
+    error !== "" ? <p className="errorMessage">{error}</p> : null;
 
   return (
     <div className="profile">

@@ -25,7 +25,7 @@ const Login = (props) => {
     if (input.firstname === "") {
       const { email, password, firstname } = input;
       axios
-        .post("http://localhost:8000/api/auth", {
+        .post("https://alternative-code.herokuapp.com/api/auth", {
           email,
           firstname,
           password,

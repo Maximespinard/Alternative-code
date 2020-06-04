@@ -15,7 +15,7 @@ const Upload = (props) => {
       .post("https://api.cloudinary.com/v1_1/dtrd9seew/image/upload", formData)
       .then((res) => {
         axios
-          .put("http://localhost:8000/api/upload", {
+          .put("https://alternative-code.herokuapp.com/api/upload", {
             id: props.id,
             avatar: res.data.secure_url,
           })

@@ -44,7 +44,7 @@ const Signup = (props) => {
       const { email, username, firstname, password } = input;
       if (passwordValid) {
         axios
-          .post("http://localhost:8000/api/user/add", {
+          .post("https://alternative-code.herokuapp.com/api/user/add", {
             email,
             firstname,
             username,

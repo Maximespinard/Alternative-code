@@ -24,7 +24,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/contact", {
+      .post("https://alternative-code.herokuapp.com/api/contact", {
         name: form.name,
         email: form.email,
         message: form.message,
@@ -47,18 +47,16 @@ const Contact = () => {
       <div className="contact__wrapper">
         <div className="contact__infos ">
           <div>
-            <a href="mailto:contact@alternative-code.com">
+            <a href="mailto:admin@alternative-code.com">
               contact@alternative-code.com
             </a>
             <i className="far fa-envelope"></i>
           </div>
           <div>
-            06 49 79 96 76 <i className="fas fa-phone"></i>
+            <a href="tel:+33649799676">06 49 79 96 76</a>
+            <i className="fas fa-phone"></i>
           </div>
-          <div
-            style={{ cursor: "pointer" }}
-            onClick={() => setRdv(!rdv)}
-          >
+          <div style={{ cursor: "pointer" }} onClick={() => setRdv(!rdv)}>
             Prendre un rendez-vous <i className="far fa-calendar-alt"></i>
           </div>
         </div>
