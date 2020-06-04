@@ -41,15 +41,17 @@ const Header = (props) => {
             <img src={logo} alt="alternative-code" />
           </Link>
         </Navbar.Brand>
-
         <div className="d-flex">
-          <div onClick={handleClick} className="d-flex headerUser-infos">
-          
-          </div>
+          <div onClick={handleClick} className="d-flex headerUser-infos"></div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
+            <Nav.Link className="d-lg-none">
+              <Link className="headerMobile_Link" to="/">
+                <p className="headerUser_link">{props.user.username}</p>
+              </Link>
+            </Nav.Link>
             <Nav.Link>
               <Link to="/">
                 <p className="headerUser_link">Home</p>
@@ -64,7 +66,8 @@ const Header = (props) => {
           </Nav>
           <div className="d-flex headerUser-infos mr-3 mb-1 ">
             {avatar !== "null" ? (
-              <div className=" d-none d-lg-block"
+              <div
+                className=" d-none d-lg-block"
                 style={{
                   backgroundImage: `url(${props.user.avatar})`,
                   backgroundSize: "cover",
