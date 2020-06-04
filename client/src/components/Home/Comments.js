@@ -47,7 +47,7 @@ const Comments = () => {
   //récupération des commentaires en bdd
   useLayoutEffect(() => {
     axios
-      .get("https://alternative-code.herokuapp.com/api/comment")
+      .get("https://alternative-code.herokuapp.com/api/comment/")
       .then((res) => {
         setReviews(res.data);
       })
@@ -72,7 +72,7 @@ const Comments = () => {
   const handleDelete = (e, authorEmail, commentId) => {
     if (author === authorEmail) {
       axios
-        .delete(`https://alternative-code.herokuapp.com/comment/${commentId}`)
+        .delete(`https://alternative-code.herokuapp.com/${commentId}`)
         .then((res) => {
           console.log("COOOOOOLLLL");
         })
@@ -161,7 +161,7 @@ const Comments = () => {
           maxLength="150"
           placeholder="Votre message"
         ></textarea>
-        <div>
+        <div className="mt-3">
           {icon(1)}
           {icon(2)}
           {icon(3)}

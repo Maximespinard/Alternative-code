@@ -70,8 +70,10 @@ const Profile = (props) => {
     setShow(!show);
   };
 
-const successMessage = success !== "" ? <p className="successMessage">{success}</p> : null
-const errorMessage = error !== "" ? <p className="errorMessage">{error}</p> : null
+  const successMessage =
+    success !== "" ? <p className="successMessage">{success}</p> : null;
+  const errorMessage =
+    error !== "" ? <p className="errorMessage">{error}</p> : null;
 
   return (
     <div className="profile">

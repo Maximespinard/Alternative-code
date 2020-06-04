@@ -10,15 +10,14 @@ const About = () => {
       <div className="d-md-flex justify-content-row m-3">
         <div className="col-md-6 about_wrapper">
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            Alternative Code c'est l'idée de vous aider à concrétiser vos
+            projets les plus fou! Aimant relever les défis les plus complexe,
+            nos collaborateurs sont avant tout des PASSIONNÉS! Nous tranformons
+            vos idées en lignes de code et nous trouvons des solutions à vos
+            problèmes. Nous offrons à notre clientele un suivi personnalisé avec
+            un interlocuteur unique et cela pour chacun de vos projets! Nous
+            sommes à votre écoute et nou saurons vous conseiller n'attendez plus
+            et discutons de votre projet...
           </p>
           <Link to="/login">
             <button>Démo</button>
