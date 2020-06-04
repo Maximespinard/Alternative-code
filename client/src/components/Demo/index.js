@@ -54,6 +54,20 @@ const Demo = (props) => {
       <Header props={props} user={user} />
       <div className="demo">
         <h2>Des fonctionnalitées rien que pour vous</h2>
+        {user.avatar == "null" ? null : (
+          <div className="d-lg-none demoMobile--banner">
+            <div
+              style={{
+                backgroundImage: `url(${user.avatar})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              .
+            </div>
+          </div>
+        )}
+
         <div className="row demo_row1 d-flex justify-content-between  ml-3 mr-3">
           <div className="col-lg-3 demo_col d-flex">
             {showProfile ? (

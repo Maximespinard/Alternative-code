@@ -13,21 +13,6 @@ const Header = (props) => {
   useEffect(() => {
     setAvatar(props.user.avatar);
   });
-  const handleClick = () => {
-    if (show === false) {
-      setShow(true);
-      document
-        .querySelector(".headerUser_info--selected--wrapper")
-        .classList.add("open");
-    } else {
-      setShow(false);
-      document
-        .querySelector(".headerUser_info--selected--wrapper")
-        .classList.remove("open");
-    }
-  };
-
-  console.log(props.user.avatar);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -42,7 +27,6 @@ const Header = (props) => {
           </Link>
         </Navbar.Brand>
         <div className="d-flex">
-          <div onClick={handleClick} className="d-flex headerUser-infos"></div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
