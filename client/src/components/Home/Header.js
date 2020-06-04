@@ -10,10 +10,11 @@ const Header = () => {
             <Typewriter
               options={{
                 strings: [
-                  "Alternative Code",
-                  "Appli mobile",
-                  "Web app",
                   "Site web",
+                  "Appli mobile",
+                  "E-commerce",
+                  "Web app",
+                  "Desktop app",
                 ],
                 autoStart: true,
                 loop: true,
@@ -33,17 +34,17 @@ const Header = () => {
           </div>
         </div>
         <div className="d-md-none"></div>
-        <div className="header__right d-none d-md-block">
+        <div className="header__right d-md-block">
           <div>
             <div>
               <i className="fab fa-react"></i>
-              <i className="fab fa-js-square"></i>
-              <i className="fab fa-python"></i>
-              <i className="fab fa-app-store-ios"></i>
-              <i className="fab fa-google-play"></i>
-              <i className="fab fa-node-js"></i>
-              <i className="fab fa-google"></i>
-              <i className="fab fa-safari"></i>
+              <i className="d-none d-md-block fab fa-node-js"></i>
+              <i className="d-none d-md-block fab fa-js-square"></i>
+              <i className="d-none d-md-block fab fa-python"></i>
+              <i className="d-none d-md-block fab fa-app-store-ios"></i>
+              <i className="d-none d-md-block fab fa-google-play"></i>
+              <i className="d-none d-md-block fab fa-google"></i>
+              <i className="d-none d-md-block fab fa-safari"></i>
             </div>
           </div>
         </div>

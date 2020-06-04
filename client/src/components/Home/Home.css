@@ -205,9 +205,9 @@
   comment
 */
 .comments__wrapper {
-  margin-top: 2em;
-  background-color: #0b2540;
   padding: 0.5em;
+  padding-top: 2em;
+  background-color: #0b2540;
   color: #fefcf3;
 }
 
@@ -260,7 +260,7 @@
   color: #fefcf3;
   font-weight: 700;
   width: 50%;
-  margin: 0.5em 1em;
+  margin: 1em;
   border-radius: 5px;
   padding: 0.5em;
 }
